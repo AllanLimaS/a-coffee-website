@@ -1,0 +1,15 @@
+{
+  "title": "Café Corporativo",
+  "slug": "corporativo",
+  "shortDescription": "Leve o melhor café especial para o seu escritório. Programa personalizado para empresas com degustação gratuita.",
+  "fullDescription": "O programa corporativo do A. Coffee foi criado para empresas que valorizam a experiência dos colaboradores. Oferecemos fornecimento contínuo de cafés especiais, com moedor profissional incluído no plano, suporte técnico e treinamento da equipe.\n\nPlanos a partir de 1kg/mês para escritórios de qualquer tamanho. Entre em contato para uma proposta personalizada e degustação gratuita.",
+  "image": "/uploads/corporativo.webp",
+  "gallery": [],
+  "price": "Sob consulta",
+  "priceUnit": "",
+  "category": "corporativo",
+  "featured": true,
+  "order": 3,
+  "badges": ["Moedor Incluso", "Suporte Técnico", "Degustação Grátis"],
+  "sensoryNotes": []
+}

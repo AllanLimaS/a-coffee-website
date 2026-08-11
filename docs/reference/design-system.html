@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A. Coffee — Design System & Visual Tokens</title>
+  <meta name="description" content="Guia de Estilo e Design System para a marca fictícia A. Coffee.">
+  
+  <!-- Google Fonts: Playfair Display (Headings) & Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Brand Color Tokens */
+      --color-canvas: #F4EFE6;
+      --color-canvas-dark: #E8E0D2;
+      --color-forest: #233126;
+      --color-forest-hover: #19241B;
+      --color-espresso: #191614;
+      --color-accent: #AA864B;
+      --color-accent-hover: #8F6F3A;
+      --color-surface: #FFFFFF;
+      --color-muted: #766E65;
+      --color-border: #DED6C7;
+
+      /* Typography Tokens */
+      --font-heading: 'Playfair Display', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+
+      /* Spacing & Radius Tokens */
+      --radius-sm: 4px;
+      --radius-md: 10px;
+      --radius-lg: 18px;
+      --radius-full: 9999px;
+      --shadow-subtle: 0 4px 20px rgba(25, 22, 20, 0.06);
+      --shadow-hover: 0 10px 30px rgba(25, 22, 20, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--color-canvas);
+      color: var(--color-espresso);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 2px solid var(--color-border);
+      padding-bottom: 2rem;
+      margin-bottom: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand-logo {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--color-forest);
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+
+    .brand-logo span {
+      color: var(--color-accent);
+    }
+
+    .badge-ds {
+      background-color: var(--color-forest);
+      color: var(--color-canvas);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.9rem;
+      border-radius: var(--radius-full);
+    }
+
+    nav.top-nav {
+      margin-bottom: 2rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav.top-nav a {
+      color: var(--color-forest);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      background: var(--color-canvas-dark);
+      transition: all 0.2s ease;
+    }
+
+    nav.top-nav a:hover, nav.top-nav a.active {
+      background: var(--color-forest);
+      color: var(--color-canvas);
+    }
+
+    section {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-subtle);
+      border: 1px solid var(--color-border);
+    }
+
+    h2.section-title {
+      font-family: var(--font-heading);
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--color-forest);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Swatches */
+    .swatch {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+    }
+
+    .swatch-color {
+      height: 110px;
+      width: 100%;
+      position: relative;
+    }
+
+    .swatch-info {
+      padding: 1rem;
+    }
+
+    .swatch-name {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .swatch-code {
+      font-family: monospace;
+      color: var(--color-muted);
+      font-size: 0.85rem;
+    }
+
+    .swatch-var {
+      font-family: monospace;
+      font-size: 0.75rem;
+      background: var(--color-canvas);
+      padding: 0.2rem 0.4rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: var(--color-forest);
+    }
+
+    /* Typography Showcase */
+    .type-specimen {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px dashed var(--color-border);
+    }
+
+    .type-specimen:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .type-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
+    }
+
+    .display-hero {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--color-forest);
+    }
+
+    .h1-specimen {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      font-weight: 700;
+    }
+
+    .h2-specimen {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    .body-lg {
+      font-size: 1.125rem;
+      font-weight: 400;
+    }
+
+    .body-sm {
+      font-size: 0.875rem;
+      color: var(--color-muted);
+    }
+
+    /* Buttons */
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      padding: 0.85rem 1.8rem;
+      border-radius: var(--radius-md);
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-accent {
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+    }
+
+    .btn-accent:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(170, 134, 75, 0.35);
+    }
+
+    .btn-forest {
+      background-color: var(--color-forest);
+      color: var(--color-canvas);
+    }
+
+    .btn-forest:hover {
+      background-color: var(--color-forest-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(35, 49, 38, 0.3);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--color-forest);
+      border: 2px solid var(--color-forest);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--color-forest);
+      color: var(--color-canvas);
+    }
+
+    /* Badges & Flavor Notes */
+    .badge-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .flavor-badge {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.35rem 0.8rem;
+      border-radius: var(--radius-full);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .badge-gold {
+      background-color: rgba(170, 134, 75, 0.12);
+      color: var(--color-accent);
+      border: 1px solid rgba(170, 134, 75, 0.3);
+    }
+
+    .badge-forest {
+      background-color: rgba(35, 49, 38, 0.1);
+      color: var(--color-forest);
+      border: 1px solid rgba(35, 49, 38, 0.2);
+    }
+
+    /* Product Card Component Token */
+    .card-demo {
+      background: var(--color-canvas);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      transition: all 0.3s ease;
+      max-width: 320px;
+    }
+
+    .card-demo:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .card-img-wrapper {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-tag-floating {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--color-forest);
+      color: var(--color-canvas);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .card-content {
+      padding: 1.25rem;
+    }
+
+    .card-title {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-desc {
+      font-size: 0.875rem;
+      color: var(--color-muted);
+      margin-bottom: 1rem;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .card-price {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-accent);
+    }
+
+    /* Marquee Component Token */
+    .marquee-wrapper {
+      background: var(--color-forest);
+      color: var(--color-canvas);
+      padding: 0.75rem 0;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      white-space: nowrap;
+    }
+
+    .marquee-content {
+      display: inline-flex;
+      gap: 2rem;
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      animation: scrollMarquee 15s linear infinite;
+    }
+
+    @keyframes scrollMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <nav class="top-nav">
+      <a href="design-system.html" class="active">📐 Design System</a>
+      <a href="index.html">☕ Ver Website Mockup (A. Coffee)</a>
+    </nav>
+
+    <header>
+      <div>
+        <div class="brand-logo">A. Coffee<span>.</span></div>
+        <p style="color: var(--color-muted); margin-top: 0.25rem; font-size: 0.95rem;">
+          Guia de Estilo & Tokens Visuais da Identidade da Marca (Fonte Playfair Display + Amber Gold #AA864B)
+        </p>
+      </div>
+      <span class="badge-ds">Design System v3.0</span>
+    </header>
+
+    <!-- Colors Section -->
+    <section>
+      <h2 class="section-title">
+        1. Paleta de Cores (Color Tokens)
+      </h2>
+      <p style="margin-bottom: 1.5rem; color: var(--color-muted);">
+        Paleta elegante combinando a sofisticação do <strong>Amber Gold (#AA864B)</strong> com o <strong>Verde Floresta (#233126)</strong> e <strong>Creme Pergaminho (#F4EFE6)</strong>.
+      </p>
+
+      <div class="grid-4">
+        
+        <div class="swatch">
+          <div class="swatch-color" style="background-color: #F4EFE6;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Cream Canvas</div>
+            <div class="swatch-code">#F4EFE6</div>
+            <div class="swatch-var">--color-canvas</div>
+          </div>
+        </div>
+
+        <div class="swatch">
+          <div class="swatch-color" style="background-color: #233126;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Forest Green</div>
+            <div class="swatch-code">#233126</div>
+            <div class="swatch-var">--color-forest</div>
+          </div>
+        </div>
+
+        <div class="swatch">
+          <div class="swatch-color" style="background-color: #AA864B;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Amber Gold</div>
+            <div class="swatch-code">#AA864B</div>
+            <div class="swatch-var">--color-accent</div>
+          </div>
+        </div>
+
+        <div class="swatch">
+          <div class="swatch-color" style="background-color: #191614;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Espresso Dark</div>
+            <div class="swatch-code">#191614</div>
+            <div class="swatch-var">--color-espresso</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Typography Section -->
+    <section>
+      <h2 class="section-title">2. Tipografia (Playfair Display + Plus Jakarta Sans)</h2>
+      <p style="margin-bottom: 1.5rem; color: var(--color-muted);">
+        Utiliza a renomada fonte <strong>Playfair Display</strong> (Serif clássica, luxuosa e editorial) para títulos, e <strong>Plus Jakarta Sans</strong> para corpo de texto.
+      </p>
+
+      <div class="type-specimen">
+        <div class="type-label">Display Hero Heading — Playfair Display 700</div>
+        <div class="display-hero">Craft Coffee, No Compromise.</div>
+      </div>
+
+      <div class="type-specimen">
+        <div class="type-label">H1 Section Title — Playfair Display 700</div>
+        <div class="h1-specimen">Nossos Grãos de Origem Única</div>
+      </div>
+
+      <div class="type-specimen">
+        <div class="type-label">H2 Subtitle — Playfair Display 600 Italic</div>
+        <div class="h2-specimen">Torra artesanal semanal em pequenos lotes</div>
+      </div>
+
+      <div class="type-specimen">
+        <div class="type-label">Body Large — Plus Jakarta Sans 400</div>
+        <div class="body-lg">
+          Trabalhamos diretamente com produtores locais do Sul de Minas e Mogiana Paulista para garantir transparência, comércio justo e perfil sensorial inigualável.
+        </div>
+      </div>
+
+      <div class="type-specimen">
+        <div class="type-label">Body Small / Meta — Plus Jakarta Sans 400</div>
+        <div class="body-sm">
+          Edição Lote 04 • Altitude 1.250m • Variedade Catuaí Vermelho • Processo Natural
+        </div>
+      </div>
+    </section>
+
+    <!-- Buttons & Interactive Components -->
+    <section>
+      <h2 class="section-title">3. Botões & Ações (Buttons & Interactions)</h2>
+      <div class="btn-group" style="margin-bottom: 2rem;">
+        <button class="btn btn-accent">Explorar Grãos</button>
+        <button class="btn btn-forest">Ver Cardápio da Cafeteria</button>
+        <button class="btn btn-outline">Nossa História</button>
+      </div>
+
+      <h3 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 1rem; color: var(--color-forest);">
+        Badges de Notas Sensoriais & Tags
+      </h3>
+      <div class="badge-group">
+        <span class="flavor-badge badge-gold">🍫 Chocolate Amargo</span>
+        <span class="flavor-badge badge-gold">🌰 Avelã Tostada</span>
+        <span class="flavor-badge badge-forest">🌿 Notas Florais</span>
+        <span class="flavor-badge badge-forest">🍊 Acidez Cítrica</span>
+        <span class="flavor-badge badge-gold">⭐ Edição Especial 100% Arábica</span>
+      </div>
+    </section>
+
+    <!-- Component Tokens Preview -->
+    <section>
+      <h2 class="section-title">4. Componentes Chave (Component Showcase)</h2>
+      
+      <div class="grid-2" style="align-items: start;">
+        
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 1rem;">
+            Card de Produto (Product Grid Card)
+          </h3>
+          <div class="card-demo">
+            <div class="card-img-wrapper">
+              <span class="card-tag-floating">Origem Única</span>
+              <img src="images/bag-mogiana.jpg" alt="Café Mogiana A. Coffee">
+            </div>
+            <div class="card-content">
+              <div class="badge-group" style="margin-bottom: 0.5rem;">
+                <span class="flavor-badge badge-gold" style="font-size: 0.75rem;">Avelã & Caramelo</span>
+              </div>
+              <div class="card-title">Mogiana Reserva</div>
+              <div class="card-desc">Lote especial com torra média e corpo aveludado. 250g.</div>
+              <div class="card-footer">
+                <div class="card-price">R$ 48,00</div>
+                <button class="btn btn-accent" style="padding: 0.5rem 1rem; font-size: 0.8rem;">Adicionar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 1rem;">
+            Ticker Marquee Continuo
+          </h3>
+          <div class="marquee-wrapper">
+            <div class="marquee-content">
+              <span>☕ A. Coffee Roasters</span> • 
+              <span>Torra Artesanal Semanal</span> • 
+              <span>100% Grãos Arábica</span> • 
+              <span>Frete Grátis em Kits</span> • 
+              <span>☕ A. Coffee Roasters</span> • 
+              <span>Torra Artesanal Semanal</span> • 
+              <span>100% Grãos Arábica</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>

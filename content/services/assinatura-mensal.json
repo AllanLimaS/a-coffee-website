@@ -1,0 +1,15 @@
+{
+  "title": "Assinatura Mensal",
+  "slug": "assinatura-mensal",
+  "shortDescription": "Receba todo mês uma seleção surpresa de cafés especiais de diferentes origens, torrados frescos para você.",
+  "fullDescription": "A assinatura mensal do A. Coffee é a forma perfeita de explorar o universo dos cafés especiais brasileiros. Todo mês você recebe entre 2 a 3 diferentes origens, com informações detalhadas sobre cada produtor, a fazenda e o perfil sensorial.\n\nIncluso: 500g de café (frações de 2-3 origens), cartão com informações do produtor, guia de preparo sugerido e acesso a cupping virtual mensal.",
+  "image": "/uploads/assinatura-mensal.webp",
+  "gallery": [],
+  "price": "R$ 89,90",
+  "priceUnit": "mês",
+  "category": "assinaturas",
+  "featured": true,
+  "order": 2,
+  "badges": ["Entrega Grátis", "Cancele Quando Quiser", "500g/mês"],
+  "sensoryNotes": []
+}

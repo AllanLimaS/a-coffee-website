@@ -1,0 +1,15 @@
+{
+  "title": "Café Especial Sul de Minas",
+  "slug": "cafe-especial",
+  "shortDescription": "Grãos selecionados das montanhas do Sul de Minas, torra média para revelar notas de chocolate amargo e avelã.",
+  "fullDescription": "Cultivado a 1.100m de altitude na região de Três Pontas, este café é colhido manualmente em apenas uma passagem, garantindo que apenas os melhores frutos maduros sejam selecionados. O processo de secagem é feito em terreiros suspensos por 25 dias, preservando as características únicas do terroir local.\n\nNotas sensoriais: chocolate amargo, avelã tostada e acidez cítrica suave. Corpo médio-alto, finish longo e agradável.",
+  "image": "/uploads/cafe-especial.webp",
+  "gallery": ["/uploads/cafe-especial-1.webp", "/uploads/cafe-especial-2.webp"],
+  "price": "R$ 42,90",
+  "priceUnit": "250g",
+  "category": "cafes",
+  "featured": true,
+  "order": 1,
+  "badges": ["SCA 87", "Sul de Minas", "Torra Média"],
+  "sensoryNotes": ["🍫 Chocolate Amargo", "🌰 Avelã", "🍊 Acidez Cítrica"]
+}

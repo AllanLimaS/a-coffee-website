@@ -1,0 +1,57 @@
+{
+  "hero": {
+    "title": "A. Coffee",
+    "subtitle": "Do grão à xícara,\ncada detalhe importa.",
+    "backgroundImage": "/uploads/hero-home.webp",
+    "ctaText": "Conheça nossos cafés",
+    "ctaLink": "/servicos"
+  },
+  "highlights": [
+    {
+      "icon": "origin",
+      "title": "Origem Rastreável",
+      "description": "Cafés selecionados diretamente de pequenos produtores do Sul de Minas, Cerrado Mineiro e Chapada Diamantina."
+    },
+    {
+      "icon": "roast",
+      "title": "Torra Artesanal",
+      "description": "Cada lote é torrado semanalmente em pequenas quantidades para garantir frescor e consistência no sabor."
+    },
+    {
+      "icon": "sustainability",
+      "title": "Sustentabilidade",
+      "description": "Trabalhamos com agricultores que praticam cultivo sustentável, preservando o bioma e as comunidades locais."
+    }
+  ],
+  "featuredProducts": ["cafe-especial", "assinatura-mensal", "corporativo"],
+  "aboutPreview": {
+    "text": "Nascemos da paixão por um café que conta histórias. Cada grão que chegaà sua xícara foi cuidadosamente selecionado, processado e torrado para revelar o melhor do terroir brasileiro.",
+    "image": "/uploads/about-preview.webp"
+  },
+  "testimonials": [
+    {
+      "name": "Maria Silva",
+      "text": "O melhor café que já provei. Desde que descobri o A. Coffee, não consigo mais tomar outro.",
+      "role": "Cliente desde 2024",
+      "avatar": ""
+    },
+    {
+      "name": "João Ferreira",
+      "text": "A assinatura mensal é perfeita. Recebo cafés de origens diferentes todo mês — sempre uma surpresa incrível.",
+      "role": "Assinante mensal",
+      "avatar": ""
+    },
+    {
+      "name": "Ana Costa",
+      "text": "Contratei o serviço corporativo para nosso escritório. A equipe adorou e a produtividade disparou!",
+      "role": "Gerente de RH",
+      "avatar": ""
+    }
+  ],
+  "cta": {
+    "title": "Pronto para descobrir o seu café ideal?",
+    "subtitle": "Explore nossa seleção de cafés especiais e encontre o sabor que combina com você.",
+    "buttonText": "Ver Todos os Cafés",
+    "buttonLink": "/servicos"
+  }
+}

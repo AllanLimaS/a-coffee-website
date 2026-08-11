@@ -274,25 +274,27 @@ Conteúdo do post em Markdown aqui...
 
 ---
 
-## 7. Design Direction
+## 7. Design Direction & Design System
 
-### 7.1 Paleta de Cores (sugestão)
-- **Primária**: tons de marrom/café (#6F4E37, #3C2415)
-- **Secundária**: creme/bege (#F5F0E8, #E8DCC8)
-- **Acento**: dourado/âmbar (#C8973E)
-- **Texto**: escuro (#1A1A1A) sobre fundo claro
-- **Background**: off-white (#FDFBF7)
+> [!NOTE]
+> O guia completo e especificação técnica dos tokens visuais está disponível em [`DESIGN_SYSTEM.md`](./DESIGN_SYSTEM.md).
 
-### 7.2 Tipografia
-- **Headlines**: Fonte serif elegante (ex: Playfair Display, Cormorant Garamond)
-- **Body**: Fonte sans-serif limpa (ex: Inter, DM Sans)
+### 7.1 Paleta de Cores Oficial
+- **Canvas / Background**: `#F4EFE6` (Creme Pergaminho Quente)
+- **Primária Dark**: `#233126` (Verde Floresta Profundo)
+- **Acento / Accent**: `#AA864B` (Amber Gold / Latão Dourado)
+- **Texto / Contraste**: `#191614` (Preto Espresso Tostado)
+- **Superfície Cards**: `#FFFFFF` (Branco Puro)
+- **Bordas**: `#DED6C7` (Cinza Pergaminho Suave)
 
-### 7.3 Estilo Visual
-- Design premium, sofisticado, minimalista com toques quentes.
-- Imagens grandes e imersivas (hero sections full-width).
-- Micro-animações sutis (fade-in ao scroll, hover em cards).
-- Espaçamento generoso (muito whitespace).
-- Inspiração: sites de marcas artesanais de café como Blue Bottle, Stumptown, Counter Culture.
+### 7.2 Tipografia Oficial
+- **Headlines / Títulos**: **`Playfair Display`** (Google Fonts — Serif editorial clássica e sofisticada, com variações itálicas expressivas)
+- **Body / Corpo de Texto**: **`Plus Jakarta Sans`** (Google Fonts — Sans-serif moderna, limpa e legível)
+
+### 7.3 Estilo Visual & Referências
+- **BENS CAFÉ**: Layout split na Hero (bloco verde floresta `#233126` com texto impactante + foto alta definição), Marquee Ticker banner animado no topo (`A. COFFEE ROASTERS • TORRA SEMANAL ARTESANAL`), cards de produtos em grid.
+- **Coffee Collective**: Minimalismo nórdico, respiro visual, badges de origem (*Sul de Minas*, *Cerrado Mineiro*, *Chapada Diamantina*) e tags de notas sensoriais (*ex: 🍫 Chocolate Amargo, 🌰 Avelã, 🍊 Acidez Cítrica*).
+- **Componentes Chave**: Guia interativo de métodos de extração do barista (V60, Espresso, Prensa Francesa), botões em Amber Gold (`#AA864B`), badges de pontuação SCA (86+).
 
 ---
 

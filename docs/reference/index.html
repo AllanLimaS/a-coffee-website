@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A. Coffee — Specialty Coffee & Craft Roasters</title>
+  <meta name="description" content="A. Coffee é uma torrefação institucional de café de especialidade. Grãos de origem única, torra semanal artesanal e experiência incomparável.">
+  
+  <!-- Google Fonts: Playfair Display (Títulos Clássicos & Editoriais) & Plus Jakarta Sans (Texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-canvas: #F4EFE6;
+      --color-canvas-dark: #E8E0D2;
+      --color-forest: #233126;
+      --color-forest-hover: #19241B;
+      --color-espresso: #191614;
+      --color-accent: #AA864B;
+      --color-accent-hover: #8F6F3A;
+      --color-surface: #FFFFFF;
+      --color-muted: #766E65;
+      --color-border: #DED6C7;
+
+      --font-heading: 'Playfair Display', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --shadow-subtle: 0 4px 25px rgba(25, 22, 20, 0.05);
+      --shadow-hover: 0 12px 35px rgba(25, 22, 20, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--color-canvas);
+      color: var(--color-espresso);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: var(--color-canvas);
+      border-bottom: 1px solid var(--color-border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      font-family: var(--font-heading);
+      font-size: 2.3rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--color-forest);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+
+    .brand-logo span {
+      color: var(--color-accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--color-espresso);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-accent);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .badge-ds-link {
+      background: var(--color-canvas-dark);
+      color: var(--color-forest);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      border: 1px solid var(--color-border);
+      transition: all 0.2s ease;
+    }
+
+    .badge-ds-link:hover {
+      background: var(--color-forest);
+      color: var(--color-canvas);
+    }
+
+    /* Marquee Ticker */
+    .marquee-bar {
+      background: var(--color-forest);
+      color: var(--color-canvas);
+      padding: 0.75rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      gap: 3rem;
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 600;
+      animation: marqueeScroll 24s linear infinite;
+    }
+
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .marquee-dot {
+      width: 6px;
+      height: 6px;
+      background-color: var(--color-accent);
+      border-radius: 50%;
+    }
+
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Hero Section (Split Layout) */
+    .hero-section {
+      max-width: 1280px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      min-height: 580px;
+    }
+
+    .hero-content-block {
+      background-color: var(--color-forest);
+      color: var(--color-canvas);
+      border-radius: var(--radius-lg);
+      padding: 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-tag {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .hero-tag::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background-color: var(--color-accent);
+    }
+
+    .hero-headline {
+      font-family: var(--font-heading);
+      font-size: 3.8rem;
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+      color: #F4EFE6;
+    }
+
+    .hero-headline span {
+      color: var(--color-accent);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .hero-body {
+      font-size: 1.1rem;
+      color: #D8DEC4;
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      padding: 1rem 2rem;
+      border-radius: var(--radius-md);
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+
+    .btn-accent {
+      background-color: var(--color-accent);
+      color: #FFFFFF;
+    }
+
+    .btn-accent:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(170, 134, 75, 0.4);
+    }
+
+    .btn-outline-light {
+      background-color: transparent;
+      color: var(--color-canvas);
+      border: 2px solid rgba(244, 239, 230, 0.4);
+    }
+
+    .btn-outline-light:hover {
+      border-color: var(--color-canvas);
+      background: rgba(244, 239, 230, 0.1);
+    }
+
+    .hero-image-block {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .hero-image-block img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-badge-overlay {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: rgba(25, 22, 20, 0.85);
+      backdrop-filter: blur(12px);
+      color: #FFFFFF;
+      padding: 1.25rem 1.5rem;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255,255,255,0.15);
+      max-width: 320px;
+    }
+
+    .hero-badge-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-accent);
+    }
+
+    .hero-badge-sub {
+      font-size: 0.85rem;
+      color: #CCC;
+      margin-top: 0.2rem;
+    }
+
+    /* Stats Ribbon */
+    .ribbon-section {
+      background-color: var(--color-surface);
+      border-y: 1px solid var(--color-border);
+      padding: 2.5rem 2rem;
+      margin: 3rem 0;
+    }
+
+    .ribbon-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-forest);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Common Section Formatting */
+    .section-padding {
+      padding: 4.5rem 2rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--color-forest);
+      line-height: 1.15;
+    }
+
+    .section-subtitle {
+      color: var(--color-muted);
+      font-size: 1.05rem;
+      max-width: 500px;
+    }
+
+    /* Story / Manifesto Section */
+    .manifesto-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      padding: 4rem;
+      border: 1px solid var(--color-border);
+    }
+
+    .manifesto-text p {
+      margin-bottom: 1.25rem;
+      font-size: 1.05rem;
+      color: #3A3530;
+    }
+
+    .manifesto-quote {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-style: italic;
+      color: var(--color-accent);
+      font-weight: 600;
+      border-left: 4px solid var(--color-accent);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    /* Product Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--color-accent);
+    }
+
+    .product-img-box {
+      height: 260px;
+      position: relative;
+      overflow: hidden;
+      background: var(--color-canvas);
+    }
+
+    .product-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .product-card:hover .product-img-box img {
+      transform: scale(1.05);
+    }
+
+    .product-origin-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--color-forest);
+      color: var(--color-canvas);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .product-info {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .flavor-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .flavor-tag {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-full);
+      background-color: rgba(170, 134, 75, 0.12);
+      color: var(--color-accent);
+      border: 1px solid rgba(170, 134, 75, 0.25);
+    }
+
+    .product-title {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .product-meta {
+      font-size: 0.88rem;
+      color: var(--color-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .product-price {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--color-accent);
+    }
+
+    /* Brewing Methods Tabs */
+    .brew-container {
+      background-color: var(--color-forest);
+      color: var(--color-canvas);
+      border-radius: var(--radius-lg);
+      padding: 4rem;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .brew-tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      padding-bottom: 1rem;
+    }
+
+    .brew-tab-btn {
+      background: transparent;
+      border: none;
+      color: #A0B2A4;
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+
+    .brew-tab-btn.active, .brew-tab-btn:hover {
+      color: var(--color-canvas);
+      background-color: rgba(255,255,255,0.1);
+    }
+
+    .brew-tab-btn.active {
+      color: var(--color-accent);
+    }
+
+    .brew-content {
+      display: none;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .brew-content.active {
+      display: grid;
+    }
+
+    .brew-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .brew-spec-item {
+      background: rgba(255,255,255,0.06);
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .spec-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: #A0B2A4;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .spec-val {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-canvas);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--color-espresso);
+      color: var(--color-canvas);
+      padding: 4.5rem 2rem 2rem;
+      border-top: 3px solid var(--color-accent);
+    }
+
+    .footer-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--color-canvas);
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand span {
+      color: var(--color-accent);
+    }
+
+    .footer-links h4 {
+      font-family: var(--font-heading);
+      color: var(--color-accent);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+      color: #AAA;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--color-canvas);
+    }
+
+    .newsletter-form input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border-radius: var(--radius-md);
+      border: 1px solid #444;
+      background: #252220;
+      color: #FFF;
+      margin-bottom: 0.75rem;
+      font-family: var(--font-body);
+    }
+
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: #888;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-section {
+        grid-template-columns: 1fr;
+      }
+      .manifesto-grid {
+        grid-template-columns: 1fr;
+      }
+      .brew-content {
+        grid-template-columns: 1fr;
+      }
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">A. Coffee<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#origem">Origem</a></li>
+        <li><a href="#graos">Grãos Selecionados</a></li>
+        <li><a href="#metodos">Métodos</a></li>
+        <li><a href="#cafeteria">Cafeteria</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="design-system.html" class="badge-ds-link">📐 Design System</a>
+        <a href="#graos" class="btn btn-accent" style="padding: 0.6rem 1.2rem; font-size: 0.85rem;">Ver Cardápio</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Marquee Ticker -->
+  <div class="marquee-bar">
+    <div class="marquee-track">
+      <div class="marquee-item"><span>A. Coffee Roasters</span> <div class="marquee-dot"></div></div>
+      <div class="marquee-item"><span>Torra Semanal Artesanal</span> <div class="marquee-dot"></div></div>
+      <div class="marquee-item"><span>100% Grãos Arábica Selecionados</span> <div class="marquee-dot"></div></div>
+      <div class="marquee-item"><span>Frete Grátis em Kits da Semana</span> <div class="marquee-dot"></div></div>
+      <div class="marquee-item"><span>A. Coffee Roasters</span> <div class="marquee-dot"></div></div>
+      <div class="marquee-item"><span>Torra Semanal Artesanal</span> <div class="marquee-dot"></div></div>
+      <div class="marquee-item"><span>100% Grãos Arábica Selecionados</span> <div class="marquee-dot"></div></div>
+      <div class="marquee-item"><span>Frete Grátis em Kits da Semana</span> <div class="marquee-dot"></div></div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content-block">
+      <div>
+        <div class="hero-tag">Specialty Roastery • Edição 2026</div>
+        <h1 class="hero-headline">Best Coffee In Our <span>Area.</span></h1>
+        <p class="hero-body">
+          Café de especialidade torrado em pequenos lotes com precisão artesanal. Do produtor direto para a sua xícara.
+        </p>
+      </div>
+
+      <div class="hero-ctas">
+        <a href="#graos" class="btn btn-accent">Conhecer Nossos Grãos</a>
+        <a href="#cafeteria" class="btn btn-outline-light">Nosso Espresso Bar</a>
+      </div>
+    </div>
+
+    <div class="hero-image-block">
+      <img src="images/hero.jpg" alt="Interior da Cafeteria A. Coffee">
+      <div class="hero-badge-overlay">
+        <div class="hero-badge-title">Showroom & Torrefação</div>
+        <div class="hero-badge-sub">Visite nossa flagship e acompanhe a torra ao vivo.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ribbon Section -->
+  <div class="ribbon-section">
+    <div class="ribbon-container">
+      <div>
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Grãos Arábica de Origem</div>
+      </div>
+      <div>
+        <div class="stat-number">86+</div>
+        <div class="stat-label">Pontuação Especialidade SCA</div>
+      </div>
+      <div>
+        <div class="stat-number">Small Batch</div>
+        <div class="stat-label">Torra Semanal Sob Demanda</div>
+      </div>
+      <div>
+        <div class="stat-number">Direct Trade</div>
+        <div class="stat-label">Comércio Justo com Fazendas</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Manifesto / Origem -->
+  <section class="section-padding" id="origem">
+    <div class="manifesto-grid">
+      <div>
+        <div style="font-size: 0.8rem; font-weight: 700; color: var(--color-accent); text-transform: uppercase; margin-bottom: 0.5rem;">
+          Nossa Filosofia
+        </div>
+        <h2 class="section-title" style="margin-bottom: 1.5rem;">Respeito ao Grão e ao Produtor.</h2>
+        <div class="manifesto-text">
+          <p>
+            Na <strong>A. Coffee</strong>, acreditamos que um café memorável é fruto de dedicação em cada etapa: da altitude das montanhas de Minas Gerais até a curva exata de temperatura na torra.
+          </p>
+          <div class="manifesto-quote">
+            "Não fazemos café apenas para acordar. Fazemos café para despertar os sentidos."
+          </div>
+          <p>
+            Trabalhamos exclusivamente com microlotes rastreáveis de alta altitude, destacando as notas naturais de cacau, avelã, frutas amarelas e florais.
+          </p>
+        </div>
+      </div>
+      <div style="border-radius: var(--radius-lg); overflow: hidden;">
+        <img src="images/espresso.jpg" alt="Espresso Extraído na A. Coffee" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Grid Showcase -->
+  <section class="section-padding" id="graos">
+    <div class="section-header">
+      <div>
+        <div style="font-size: 0.8rem; font-weight: 700; color: var(--color-accent); text-transform: uppercase; margin-bottom: 0.5rem;">
+          Lotes Especiais Da Semana
+        </div>
+        <h2 class="section-title">Grãos Selecionados</h2>
+      </div>
+      <div class="section-subtitle">
+        Pacotes de 250g em grãos ou moído na hora para o seu método de preferência.
+      </div>
+    </div>
+
+    <div class="product-grid">
+
+      <!-- Product 1 -->
+      <div class="product-card">
+        <div class="product-img-box">
+          <span class="product-origin-badge">Sul de Minas</span>
+          <img src="images/bag-mogiana.jpg" alt="Café Mogiana Reserva A. Coffee">
+        </div>
+        <div class="product-info">
+          <div>
+            <div class="flavor-tags">
+              <span class="flavor-tag">🍫 Chocolate Amargo</span>
+              <span class="flavor-tag">🌰 Avelã</span>
+            </div>
+            <h3 class="product-title">Mogiana Reserva</h3>
+            <p class="product-meta">Catuaí Vermelho • Altitude 1.200m • Torra Média</p>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">R$ 48,00</div>
+            <button class="btn btn-accent" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <div class="product-img-box">
+          <span class="product-origin-badge">Cerrado Mineiro</span>
+          <img src="images/espresso.jpg" alt="Single Origin Espresso Blend">
+        </div>
+        <div class="product-info">
+          <div>
+            <div class="flavor-tags">
+              <span class="flavor-tag">🍯 Caramelo</span>
+              <span class="flavor-tag">🍊 Acidez Cítrica</span>
+            </div>
+            <h3 class="product-title">Espresso House Blend</h3>
+            <p class="product-meta">Bourbon Amarelo • Altitude 1.350m • Corpo Cremoso</p>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">R$ 52,00</div>
+            <button class="btn btn-accent" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <div class="product-img-box">
+          <span class="product-origin-badge">Chapada Diamantina</span>
+          <img src="images/hero.jpg" alt="Edição Chapada Diamantina">
+        </div>
+        <div class="product-info">
+          <div>
+            <div class="flavor-tags">
+              <span class="flavor-tag">🌿 Floral</span>
+              <span class="flavor-tag">🍈 Melão doce</span>
+            </div>
+            <h3 class="product-title">Microlote Diamantina</h3>
+            <p class="product-meta">Variedade Arara • Altitude 1.400m • Processo Fermentado</p>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">R$ 58,00</div>
+            <button class="btn btn-accent" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Adicionar</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Brewing Methods -->
+  <section class="section-padding" id="metodos">
+    <div class="brew-container">
+      <div style="font-size: 0.8rem; font-weight: 700; color: var(--color-accent); text-transform: uppercase; margin-bottom: 0.5rem;">
+        Guia do Barista
+      </div>
+      <h2 class="section-title" style="color: var(--color-canvas); margin-bottom: 2rem;">Extração Perfeita em Casa</h2>
+
+      <div class="brew-tabs">
+        <button class="brew-tab-btn active" onclick="openBrewTab(event, 'tab-v60')">V60 / Filtrado</button>
+        <button class="brew-tab-btn" onclick="openBrewTab(event, 'tab-espresso')">Espresso Bar</button>
+        <button class="brew-tab-btn" onclick="openBrewTab(event, 'tab-press')">Prensa Francesa</button>
+      </div>
+
+      <!-- Tab V60 -->
+      <div class="brew-content active" id="tab-v60">
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.9rem; font-weight: 700; margin-bottom: 1rem;">
+            V60 Pour Over
+          </h3>
+          <p style="color: #D8DEC4; margin-bottom: 1.5rem;">
+            O método ideal para destacar a acidez brilhante e as notas florais e frutadas dos nossos grãos de microlote.
+          </p>
+          <div class="brew-specs">
+            <div class="brew-spec-item">
+              <div class="spec-label">Proporção</div>
+              <div class="spec-val">15g / 225ml</div>
+            </div>
+            <div class="brew-spec-item">
+              <div class="spec-label">Moagem</div>
+              <div class="spec-val">Média-Fina</div>
+            </div>
+            <div class="brew-spec-item">
+              <div class="spec-label">Temperatura</div>
+              <div class="spec-val">92°C - 94°C</div>
+            </div>
+            <div class="brew-spec-item">
+              <div class="spec-label">Tempo Total</div>
+              <div class="spec-val">3:00 min</div>
+            </div>
+          </div>
+        </div>
+        <div style="border-radius: var(--radius-md); overflow: hidden; background: rgba(0,0,0,0.2); padding: 2rem; text-align: center;">
+          <div style="font-size: 3.5rem; margin-bottom: 1rem;">☕</div>
+          <h4 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--color-accent);">Dica do Mestre Torrador</h4>
+          <p style="font-size: 0.9rem; color: #CCC; margin-top: 0.5rem;">
+            Faça uma pré-infusão de 45ml de água por 45 segundos para liberar os aromas doces antes do despejo contínuo.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tab Espresso -->
+      <div class="brew-content" id="tab-espresso">
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.9rem; font-weight: 700; margin-bottom: 1rem;">
+            Espresso Tradicional
+          </h3>
+          <p style="color: #D8DEC4; margin-bottom: 1.5rem;">
+            Extração sob alta pressão que resulta em uma xícara concentrada, aveludada e com crema dourada persistente.
+          </p>
+          <div class="brew-specs">
+            <div class="brew-spec-item">
+              <div class="spec-label">Dose Dupla</div>
+              <div class="spec-val">18g de pó</div>
+            </div>
+            <div class="brew-spec-item">
+              <div class="spec-label">Rendimento</div>
+              <div class="spec-val">36g líquido</div>
+            </div>
+            <div class="brew-spec-item">
+              <div class="spec-label">Pressão</div>
+              <div class="spec-val">9 Bar</div>
+            </div>
+            <div class="brew-spec-item">
+              <div class="spec-label">Tempo</div>
+              <div class="spec-val">27s - 30s</div>
+            </div>
+          </div>
+        </div>
+        <div style="border-radius: var(--radius-md); overflow: hidden; background: rgba(0,0,0,0.2); padding: 2rem; text-align: center;">
+          <div style="font-size: 3.5rem; margin-bottom: 1rem;">⚡</div>
+          <h4 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--color-accent);">Dica de Espresso</h4>
+          <p style="font-size: 0.9rem; color: #CCC; margin-top: 0.5rem;">
+            Utilize nossa linha <strong>Espresso House Blend</strong> para máxima cremosidade e notas marcantes de cacau.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tab French Press -->
+      <div class="brew-content" id="tab-press">
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.9rem; font-weight: 700; margin-bottom: 1rem;">
+            Prensa Francesa (French Press)
+          </h3>
+          <p style="color: #D8DEC4; margin-bottom: 1.5rem;">
+            Extração por infusão total que preserva os óleos essenciais do grão, garantindo um corpo denso e aconchegante.
+          </p>
+          <div class="brew-specs">
+            <div class="brew-spec-item">
+              <div class="spec-label">Proporção</div>
+              <div class="spec-val">20g / 300ml</div>
+            </div>
+            <div class="brew-spec-item">
+              <div class="spec-label">Moagem</div>
+              <div class="spec-val">Grossa</div>
+            </div>
+            <div class="brew-spec-item">
+              <div class="spec-label">Infusão</div>
+              <div class="spec-val">4 minutos</div>
+            </div>
+            <div class="brew-spec-item">
+              <div class="spec-label">Corpo</div>
+              <div class="spec-val">Denso & Oleoso</div>
+            </div>
+          </div>
+        </div>
+        <div style="border-radius: var(--radius-md); overflow: hidden; background: rgba(0,0,0,0.2); padding: 2rem; text-align: center;">
+          <div style="font-size: 3.5rem; margin-bottom: 1rem;">🫖</div>
+          <h4 style="font-family: var(--font-heading); font-size: 1.25rem; color: var(--color-accent);">Dica de Infusão</h4>
+          <p style="font-size: 0.9rem; color: #CCC; margin-top: 0.5rem;">
+            Ao término dos 4 minutos, remova a espuma superficial antes de baixar o êmbolo suavemente.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Showroom / Cafeteria -->
+  <section class="section-padding" id="cafeteria">
+    <div class="manifesto-grid" style="background: var(--color-canvas-dark);">
+      <div>
+        <div style="font-size: 0.8rem; font-weight: 700; color: var(--color-accent); text-transform: uppercase; margin-bottom: 0.5rem;">
+          Nosso Espaço
+        </div>
+        <h2 class="section-title" style="margin-bottom: 1.5rem;">Visite Nosso Espresso Bar.</h2>
+        <p style="margin-bottom: 1rem; color: #333;">
+          Venha provar nossos cafés preparados por baristas certificados e acompanhar o processo de torra semanal.
+        </p>
+        <p style="margin-bottom: 1.5rem; font-weight: 600; color: var(--color-forest);">
+          📍 Rua do Café Artesanal, 178 — Jardins<br>
+          ⏰ Seg a Sáb: 08h às 19h | Dom: 09h às 16h
+        </p>
+        <button class="btn btn-accent">Ver No Mapa</button>
+      </div>
+      <div style="border-radius: var(--radius-lg); overflow: hidden;">
+        <img src="images/hero.jpg" alt="Cafeteria A. Coffee Bar">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div>
+        <div class="footer-brand">A. Coffee<span>.</span></div>
+        <p style="color: #999; font-size: 0.95rem; max-width: 320px;">
+          Torrefação de café de especialidade focada em transparência, comércio justo e a busca constante pelo gole perfeito.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#origem">Nossa Origem</a></li>
+          <li><a href="#graos">Grãos Selecionados</a></li>
+          <li><a href="#metodos">Guia de Métodos</a></li>
+          <li><a href="design-system.html">📐 Design System</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="#">contato@acoffee.com.br</a></li>
+          <li><a href="#">(11) 99999-8888</a></li>
+          <li><a href="#">Instagram @a.coffee.roasters</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Clube do Café</h4>
+        <p style="font-size: 0.85rem; color: #AAA; margin-bottom: 0.75rem;">
+          Assine para receber ofertas de lotes raros e novidades da torrefação.
+        </p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Obrigado por se inscrever na A. Coffee!');">
+          <input type="email" placeholder="Seu melhor e-mail" required>
+          <button type="submit" class="btn btn-accent" style="width: 100%; padding: 0.75rem; font-size: 0.85rem;">Inscrever-se</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 A. Coffee Roasters. Projeto de Portfólio por Allan.</div>
+      <div>Desenvolvido com HTML5 & Design System Customizado.</div>
+    </div>
+  </footer>
+
+  <script>
+    function openBrewTab(evt, tabId) {
+      const contents = document.querySelectorAll('.brew-content');
+      contents.forEach(content => content.classList.remove('active'));
+      
+      const buttons = document.querySelectorAll('.brew-tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      
+      document.getElementById(tabId).classList.add('active');
+      evt.currentTarget.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>

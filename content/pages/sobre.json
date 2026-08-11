@@ -1,0 +1,85 @@
+{
+  "hero": {
+    "title": "Nossa História",
+    "subtitle": "Da fazenda à sua xícara, uma jornada de paixão pelo café brasileiro.",
+    "backgroundImage": "/uploads/hero-sobre.webp"
+  },
+  "story": {
+    "title": "Como tudo começou",
+    "paragraphs": [
+      "O A. Coffee nasceu em 2020, em uma pequena cidade do Sul de Minas Gerais, de onde vem boa parte dos melhores grãos do país. Dois amigos apaixonados por café decidiram que era hora de compartilhar com o mundo o que as montanhas mineiras tinham de melhor.",
+      "Começamos visitando produtores locais, aprendendo sobre o processo de colheita, fermentação e secagem. Descobrimos que por trás de cada xícara existe uma história de dedicação, conhecimento ancestral e amor pela terra.",
+      "Hoje trabalhamos com mais de 15 produtores parceiros em três das principais regiões cafeicultoras do Brasil, garantindo rastreabilidade total e qualidade consistente em cada lote."
+    ],
+    "image": "/uploads/nossa-historia.webp"
+  },
+  "timeline": [
+    {
+      "year": "2020",
+      "title": "O início",
+      "description": "Fundação do A. Coffee em São Paulo, com a primeira seleção de grãos do Sul de Minas Gerais."
+    },
+    {
+      "year": "2021",
+      "title": "Primeiros parceiros",
+      "description": "Estabelecemos parcerias com 5 produtores certificados e lançamos nossa primeira linha de assinaturas."
+    },
+    {
+      "year": "2022",
+      "title": "Expansão regional",
+      "description": "Incluímos cafés do Cerrado Mineiro e da Chapada Diamantina, diversificando o portfólio de origens."
+    },
+    {
+      "year": "2023",
+      "title": "Certificação SCA",
+      "description": "Nosso head barista obteve certificação pela Specialty Coffee Association. Todos os cafés passaram a ser avaliados com pontuação SCA 85+."
+    },
+    {
+      "year": "2024",
+      "title": "Cafés corporativos",
+      "description": "Lançamento do programa corporativo, levando o melhor café especial para escritórios e empresas."
+    }
+  ],
+  "values": [
+    {
+      "icon": "quality",
+      "title": "Qualidade Acima de Tudo",
+      "description": "Selecionamos rigorosamente cada lote. Apenas grãos com pontuação SCA 85+ chegam até você."
+    },
+    {
+      "icon": "transparency",
+      "title": "Transparência Total",
+      "description": "Você sabe exatamente de onde vem seu café: fazenda, altitude, variedade, processo de pós-colheita."
+    },
+    {
+      "icon": "community",
+      "title": "Comunidade",
+      "description": "Pagamos preços justos e investimos em projetos de educação nas comunidades produtoras."
+    },
+    {
+      "icon": "sustainability",
+      "title": "Sustentabilidade",
+      "description": "Embalagens biodegradáveis, logística de baixo impacto e apoio a práticas de cultivo regenerativo."
+    }
+  ],
+  "team": [
+    {
+      "name": "André Mendes",
+      "role": "Co-fundador & Head de Sourcing",
+      "bio": "Cresceu em fazenda de café no Sul de Minas. Mais de 10 anos visitando produtores e cupping sessions ao redor do Brasil.",
+      "photo": "/uploads/team-andre.webp"
+    },
+    {
+      "name": "Camila Torres",
+      "role": "Co-fundadora & Head de Operações",
+      "bio": "Formada em Administração com especialização em supply chain. Garante que cada lote chegue fresco e no prazo.",
+      "photo": "/uploads/team-camila.webp"
+    },
+    {
+      "name": "Pedro Alves",
+      "role": "Head Barista & Q-Grader",
+      "bio": "Barista certificado pela SCA com 8 anos de experiência. Responsável por todos os processos de avaliação e torra.",
+      "photo": "/uploads/team-pedro.webp"
+    }
+  ]
+}

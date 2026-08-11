@@ -1,0 +1,15 @@
+{
+  "siteName": "A. Coffee",
+  "tagline": "Café artesanal com alma brasileira.",
+  "logo": "/images/logo.svg",
+  "socialLinks": {
+    "instagram": "https://instagram.com/a.coffee",
+    "facebook": "",
+    "whatsapp": "5511999999999"
+  },
+  "contactInfo": {
+    "email": "contato@acoffee.com.br",
+    "phone": "+55 11 99999-9999",
+    "address": "Rua do Café, 123 — São Paulo, SP"
+  }
+}
