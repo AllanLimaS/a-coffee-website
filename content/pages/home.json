@@ -2,7 +2,7 @@
   "hero": {
     "title": "A. Coffee TESTE MUITO LOUCO",
     "subtitle": "Do grão à xícara,cada detalhe importa muito mesmo.",
-    "backgroundImage": "/uploads/hero-home.webp",
+    "backgroundImage": "/uploads/cafe-1786408807903.webp",
     "ctaText": "Conheça nossos cafés",
     "ctaLink": "/servicos"
   },
@@ -30,7 +30,7 @@
   ],
   "aboutPreview": {
     "text": "Nascemos da paixão por um café que conta histórias. Cada grão que chegaà sua xícara foi cuidadosamente selecionado, processado e torrado para revelar o melhor do terroir brasileiro.",
-    "image": "/uploads/about-preview.webp"
+    "image": "/uploads/cafe2-1786408867033.webp"
   },
   "testimonials": [
     {
