@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { getHomeContent, getAllServices } from '@/lib/content'
 
 export const metadata: Metadata = {
@@ -24,9 +25,19 @@ export default function HomePage() {
         className="relative min-h-screen flex items-end pb-20 md:pb-32 overflow-hidden"
         style={{ backgroundColor: 'var(--color-forest)' }}
       >
-        {/* Background decorativo */}
+        {/* Imagem de Fundo (se configurada) */}
+        {home.hero.backgroundImage && (
+          <Image
+            src={home.hero.backgroundImage}
+            alt={home.hero.title}
+            fill
+            className="object-cover opacity-35"
+            priority
+          />
+        )}
+        {/* Background decorativo overlay */}
         <div
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-20 pointer-events-none"
           style={{
             backgroundImage: 'radial-gradient(circle at 70% 40%, var(--color-gold) 0%, transparent 60%)',
           }}
@@ -239,12 +250,21 @@ export default function HomePage() {
       <section className="py-20 md:py-28" style={{ backgroundColor: 'var(--color-canvas)' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
-            {/* Imagem placeholder */}
-            <div
-              className="rounded-2xl h-80 md:h-96 flex items-center justify-center text-6xl"
-              style={{ backgroundColor: 'var(--color-border)' }}
-            >
-              🌿
+            {/* Imagem */}
+            <div className="relative rounded-2xl h-80 md:h-96 overflow-hidden shadow-lg border border-[var(--color-border)]">
+              {home.aboutPreview.image ? (
+                <Image
+                  src={home.aboutPreview.image}
+                  alt="Sobre A. Coffee"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center text-6xl bg-[var(--color-border)]">
+                  🌿
+                </div>
+              )}
             </div>
             {/* Texto */}
             <div>
