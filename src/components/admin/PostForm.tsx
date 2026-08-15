@@ -198,7 +198,7 @@ export default function PostForm({ initialData, sha }: PostFormProps) {
             size="sm"
             onClick={() => set('status', form.status === 'published' ? 'draft' : 'published')}
           >
-            {form.status === 'published' ? '📝 Rascunho' : '✅ Publicar'}
+            {form.status === 'published' ? 'Mudar para Rascunho' : 'Publicar'}
           </Button>
           <Button onClick={handleSave} loading={saving} size="sm">
             {saving ? 'Salvando...' : 'Salvar'}
