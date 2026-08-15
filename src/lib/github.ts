@@ -44,13 +44,21 @@ export async function putFileContent(
     const octokit = getOctokit()
     const encoded = Buffer.from(content, 'utf-8').toString('base64')
 
+    let currentSha = sha
+    if (!currentSha) {
+      const existing = await getFileContent(path)
+      if (existing) {
+        currentSha = existing.sha
+      }
+    }
+
     await octokit.repos.createOrUpdateFileContents({
       owner: REPO_OWNER,
       repo: REPO_NAME,
       path,
       message,
       content: encoded,
-      sha,
+      sha: currentSha,
     })
 
     return true
