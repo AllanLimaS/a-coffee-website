@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { getFileContent, putFileContent, deleteFile } from '@/lib/github'
+import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import fs from 'fs'
 import path from 'path'
 
@@ -14,6 +15,35 @@ async function requireAuth() {
   return null
 }
 
+// ── Rate limit: 60 req/min por IP ──
+function checkRateLimit(req: NextRequest) {
+  const ip = getClientIp(req)
+  const result = rateLimit(`content:${ip}`, { limit: 60, windowMs: 60_000 })
+  if (!result.allowed) {
+    const retryAfter = Math.ceil(result.retryAfterMs / 1000)
+    return NextResponse.json(
+      { error: 'Muitas requisições. Tente novamente em instantes.' },
+      { status: 429, headers: { 'Retry-After': String(retryAfter) } }
+    )
+  }
+  return null
+}
+
+// ── Proteção: path traversal ──
+// Apenas caminhos dentro dessas pastas são permitidos.
+const ALLOWED_PREFIXES = ['content/', 'public/uploads/']
+
+function assertSafePath(filePath: string): void {
+  // Normaliza separadores e resolve sequências ".."
+  const normalized = path.posix.normalize(filePath.replace(/\\/g, '/'))
+
+  const isAllowed = ALLOWED_PREFIXES.some(prefix => normalized.startsWith(prefix))
+
+  if (!isAllowed || normalized.includes('..')) {
+    throw new Error(`Caminho não permitido: "${filePath}"`)
+  }
+}
+
 /**
  * GET /api/content?path=content/pages/home.json
  * Lê o conteúdo (primeiro do disco local, depois fallback GitHub API).
@@ -22,9 +52,18 @@ export async function GET(req: NextRequest) {
   const unauth = await requireAuth()
   if (unauth) return unauth
 
+  const limited = checkRateLimit(req)
+  if (limited) return limited
+
   const filePath = req.nextUrl.searchParams.get('path')
   if (!filePath) {
     return NextResponse.json({ error: 'Parâmetro "path" obrigatório' }, { status: 400 })
+  }
+
+  try {
+    assertSafePath(filePath)
+  } catch {
+    return NextResponse.json({ error: 'Caminho não permitido' }, { status: 403 })
   }
 
   // 1. Tentar ler do sistema de arquivos local primeiro
@@ -58,6 +97,9 @@ export async function PUT(req: NextRequest) {
   const unauth = await requireAuth()
   if (unauth) return unauth
 
+  const limited = checkRateLimit(req)
+  if (limited) return limited
+
   let body: { path?: string; content?: string; message?: string; sha?: string }
   try {
     body = await req.json()
@@ -69,6 +111,12 @@ export async function PUT(req: NextRequest) {
 
   if (!filePath || content === undefined) {
     return NextResponse.json({ error: 'Campos "path" e "content" são obrigatórios' }, { status: 400 })
+  }
+
+  try {
+    assertSafePath(filePath)
+  } catch {
+    return NextResponse.json({ error: 'Caminho não permitido' }, { status: 403 })
   }
 
   // 1. Salvar no sistema de arquivos local
@@ -101,6 +149,9 @@ export async function DELETE(req: NextRequest) {
   const unauth = await requireAuth()
   if (unauth) return unauth
 
+  const limited = checkRateLimit(req)
+  if (limited) return limited
+
   let body: { path?: string; sha?: string; message?: string }
   try {
     body = await req.json()
@@ -112,6 +163,12 @@ export async function DELETE(req: NextRequest) {
 
   if (!filePath) {
     return NextResponse.json({ error: 'Campo "path" obrigatório' }, { status: 400 })
+  }
+
+  try {
+    assertSafePath(filePath)
+  } catch {
+    return NextResponse.json({ error: 'Caminho não permitido' }, { status: 403 })
   }
 
   // 1. Remover do disco local

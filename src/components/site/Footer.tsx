@@ -141,14 +141,30 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div
-          className="mt-12 pt-6 border-t flex flex-col sm:flex-row items-center justify-between gap-4 text-xs"
+          className="mt-12 pt-8 border-t flex flex-col md:flex-row items-center justify-between gap-4 text-xs"
           style={{
             borderColor: 'rgba(255,255,255,0.08)',
-            color: 'rgba(244,239,230,0.4)',
+            color: 'rgba(244,239,230,0.5)',
           }}
         >
-          <p>© {year} A. Coffee. Todos os direitos reservados.</p>
-          <p>Feito com ☕ e código limpo.</p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
+            <p>© {year} A. Coffee Roasters. Todos os direitos reservados.</p>
+            <span className="hidden sm:inline opacity-30">•</span>
+            <p className="text-[rgba(244,239,230,0.4)]">
+              Projeto conceitual com dados fictícios para fins de portfólio.
+            </p>
+          </div>
+          <div className="flex items-center gap-2">
+            <span>Desenvolvido por</span>
+            <a
+              href="https://allanlimas.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[var(--color-gold)] hover:underline transition-all"
+            >
+              Allan Lima
+            </a>
+          </div>
         </div>
       </div>
     </footer>

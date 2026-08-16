@@ -1,6 +1,6 @@
 {
   "hero": {
-    "title": "A. Coffee ",
+    "title": "Cafés Especiais com Alma Brasileira",
     "subtitle": "Do grão à xícara, cada detalhe importa.",
     "backgroundImage": "/uploads/coffee_hero_poster.webp",
     "backgroundVideo": "/uploads/coffee_hero_web.mp4",
@@ -30,7 +30,7 @@
     "corporativo"
   ],
   "aboutPreview": {
-    "text": "Nascemos da paixão por um café que conta histórias. Cada grão que chegaà sua xícara foi cuidadosamente selecionado, processado e torrado para revelar o melhor do terroir brasileiro.",
+    "text": "Nascemos da paixão por um café que conta histórias. Cada grão que chega à sua xícara foi cuidadosamente selecionado, processado e torrado para revelar o melhor do terroir brasileiro.",
     "image": "/uploads/cafe2-1786409085339.webp"
   },
   "testimonials": [

@@ -12,32 +12,35 @@ export default function ServicosPage() {
 
   return (
     <>
-      {/* Hero */}
+      {/* ── Hero ── */}
       <section
-        className="pt-32 pb-16 md:pt-40 md:pb-20"
-        style={{ backgroundColor: 'var(--color-canvas)' }}
+        className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden"
+        style={{ backgroundColor: 'var(--color-forest)' }}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <span
-            className="text-xs font-semibold tracking-widest uppercase mb-4 block"
-            style={{ color: 'var(--color-gold)' }}
-          >
-            Portfólio
-          </span>
+        <div
+          className="absolute inset-0 opacity-20 pointer-events-none"
+          style={{
+            backgroundImage: 'radial-gradient(circle at 30% 60%, var(--color-gold) 0%, transparent 55%)',
+          }}
+        />
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <h1
-            className="text-5xl md:text-6xl font-bold mb-4"
-            style={{ fontFamily: 'var(--font-display)', color: 'var(--color-espresso)' }}
+            className="text-5xl sm:text-6xl md:text-7xl font-bold leading-none mb-6 max-w-2xl"
+            style={{ fontFamily: 'var(--font-display)', color: 'var(--color-canvas)' }}
           >
-            Nossos Produtos
+            Nossos Serviços
           </h1>
-          <p className="text-xl max-w-lg" style={{ color: 'var(--color-muted)' }}>
-            Cada produto reflete a nossa obsessão por qualidade e a riqueza do café brasileiro.
+          <p
+            className="text-xl max-w-xl leading-relaxed"
+            style={{ color: 'rgba(244,239,230,0.7)' }}
+          >
+            Linha de cafés especiais, planos de assinatura mensal e soluções sob medida para empresas.
           </p>
         </div>
       </section>
 
       {/* Grid com filtros */}
-      <section className="pb-24 md:pb-32" style={{ backgroundColor: 'var(--color-canvas)' }}>
+      <section className="py-20 md:py-28" style={{ backgroundColor: 'var(--color-canvas)' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <ServicesGrid services={services} />
         </div>

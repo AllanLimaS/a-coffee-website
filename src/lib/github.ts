@@ -13,6 +13,16 @@ export function getOctokit(): Octokit {
 export const REPO_OWNER = process.env.GITHUB_OWNER ?? ''
 export const REPO_NAME  = process.env.GITHUB_REPO  ?? ''
 
+// ── Helper: extrai mensagem segura de um erro (nunca loga o objeto inteiro,
+//    que pode conter o token na URL da requisição) ──
+function safeErrorMessage(err: unknown): string {
+  if (err instanceof Error) return err.message
+  if (typeof err === 'object' && err !== null && 'status' in err) {
+    return `HTTP ${(err as { status: number }).status}`
+  }
+  return 'Erro desconhecido'
+}
+
 // ── Leitura de arquivo ──
 export async function getFileContent(path: string): Promise<{ content: string; sha: string } | null> {
   try {
@@ -63,7 +73,7 @@ export async function putFileContent(
 
     return true
   } catch (err) {
-    console.error('[github] putFileContent error:', err)
+    console.error('[github] putFileContent error:', safeErrorMessage(err))
     return false
   }
 }
@@ -87,7 +97,7 @@ export async function deleteFile(
 
     return true
   } catch (err) {
-    console.error('[github] deleteFile error:', err)
+    console.error('[github] deleteFile error:', safeErrorMessage(err))
     return false
   }
 }

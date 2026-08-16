@@ -21,6 +21,7 @@ export interface HomeContent {
     title: string
     subtitle: string
     backgroundImage: string
+    backgroundVideo?: string
     ctaText: string
     ctaLink: string
   }
@@ -76,6 +77,19 @@ export interface AboutContent {
     bio: string
     photo: string
   }>
+}
+
+// ── Conteúdo da página Contato ──
+export interface ContactContent {
+  title: string
+  subtitle: string
+  email: string
+  phone: string
+  address: string
+  hours: string
+  instagramUrl: string
+  whatsappUrl: string
+  mapUrl?: string
 }
 
 // ── Serviço / Produto ──

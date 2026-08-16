@@ -9,6 +9,9 @@ export default withAuth({
       return !!token
     },
   },
+  pages: {
+    signIn: '/admin/login',
+  },
 })
 
 export const config = {

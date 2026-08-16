@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { optimizeAndSave, deleteUpload, listUploads } from '@/lib/image'
+import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
 // ── Proteção: apenas sessão autenticada ──
 async function requireAuth() {
@@ -12,13 +13,30 @@ async function requireAuth() {
   return null
 }
 
+// ── Rate limit: 30 req/min por IP ──
+function checkRateLimit(req: NextRequest) {
+  const ip = getClientIp(req)
+  const result = rateLimit(`upload:${ip}`, { limit: 30, windowMs: 60_000 })
+  if (!result.allowed) {
+    const retryAfter = Math.ceil(result.retryAfterMs / 1000)
+    return NextResponse.json(
+      { error: 'Muitas requisições. Tente novamente em instantes.' },
+      { status: 429, headers: { 'Retry-After': String(retryAfter) } }
+    )
+  }
+  return null
+}
+
 /**
  * GET /api/upload
  * Lista todas as imagens em public/uploads/.
  */
-export async function GET() {
+export async function GET(req: NextRequest) {
   const unauth = await requireAuth()
   if (unauth) return unauth
+
+  const limited = checkRateLimit(req)
+  if (limited) return limited
 
   const uploads = listUploads()
   return NextResponse.json({ uploads })
@@ -32,6 +50,9 @@ export async function GET() {
 export async function POST(req: NextRequest) {
   const unauth = await requireAuth()
   if (unauth) return unauth
+
+  const limited = checkRateLimit(req)
+  if (limited) return limited
 
   let formData: FormData
   try {
@@ -80,6 +101,9 @@ export async function POST(req: NextRequest) {
 export async function DELETE(req: NextRequest) {
   const unauth = await requireAuth()
   if (unauth) return unauth
+
+  const limited = checkRateLimit(req)
+  if (limited) return limited
 
   let body: { filename?: string }
   try {

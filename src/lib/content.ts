@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import type { SiteConfig, HomeContent, AboutContent, Service, Post, PostFrontmatter } from '@/types/content'
+import type { SiteConfig, HomeContent, AboutContent, ContactContent, Service, Post, PostFrontmatter } from '@/types/content'
 
 const CONTENT_DIR = path.join(process.cwd(), 'content')
 
@@ -38,6 +38,23 @@ export function getAboutContent(): AboutContent {
   return content
 }
 
+export function getContactContent(): ContactContent {
+  const content = readJson<ContactContent>(path.join(CONTENT_DIR, 'pages', 'contato.json'))
+  if (!content) {
+    return {
+      title: 'Contato',
+      subtitle: 'Tem alguma dúvida, sugestão ou quer saber mais sobre nossos cafés especiais? Adoramos conversar sobre café.',
+      email: 'contato@acoffee.com.br',
+      phone: '+55 11 99999-9999',
+      address: 'Rua do Café, 123\nSão Paulo, SP',
+      hours: 'Seg–Sex, 9h às 18h',
+      instagramUrl: 'https://instagram.com/a.coffee',
+      whatsappUrl: 'https://wa.me/5511999999999',
+    }
+  }
+  return content
+}
+
 // ── Serviços ──
 
 export function getAllServices(): Service[] {
@@ -53,7 +70,8 @@ export function getAllServices(): Service[] {
 }
 
 export function getServiceBySlug(slug: string): Service | null {
-  return readJson<Service>(path.join(CONTENT_DIR, 'services', `${slug}.json`))
+  const safeSlug = path.basename(slug) // previne path traversal via "../"
+  return readJson<Service>(path.join(CONTENT_DIR, 'services', `${safeSlug}.json`))
 }
 
 // ── Posts do Blog ──
@@ -78,7 +96,8 @@ export function getAllPosts(onlyPublished = true): Post[] {
 }
 
 export function getPostBySlug(slug: string): Post | null {
-  const filePath = path.join(CONTENT_DIR, 'posts', `${slug}.md`)
+  const safeSlug = path.basename(slug) // previne path traversal via "../"
+  const filePath = path.join(CONTENT_DIR, 'posts', `${safeSlug}.md`)
   if (!fs.existsSync(filePath)) return null
 
   const raw = fs.readFileSync(filePath, 'utf-8')

@@ -64,21 +64,21 @@
   ],
   "team": [
     {
-      "name": "André Mendes",
+      "name": "Fulano da Silva",
       "role": "Co-fundador & Head de Sourcing",
-      "bio": "Cresceu em fazenda de café no Sul de Minas. Mais de 10 anos visitando produtores e cupping sessions ao redor do Brasil.",
+      "bio": "Especialista em origens e terroir. Mais de 10 anos visitando pequenos produtores e conduzindo cupping sessions ao redor do Brasil.",
       "photo": "/uploads/team-andre.webp"
     },
     {
-      "name": "Camila Torres",
+      "name": "Ciclana de Oliveira",
       "role": "Co-fundadora & Head de Operações",
-      "bio": "Formada em Administração com especialização em supply chain. Garante que cada lote chegue fresco e no prazo.",
+      "bio": "Especialista em supply chain e experiência do cliente. Garante que cada lote torrado chegue com frescor impecável.",
       "photo": "/uploads/team-camila.webp"
     },
     {
-      "name": "Pedro Alves",
-      "role": "Head Barista & Q-Grader",
-      "bio": "Barista certificado pela SCA com 8 anos de experiência. Responsável por todos os processos de avaliação e torra.",
+      "name": "Beltrano Pereira",
+      "role": "Mestre de Torra & Q-Grader",
+      "bio": "Barista certificado pela Specialty Coffee Association. Responsável pelas curvas de torra e controle rigoroso de qualidade sensorial.",
       "photo": "/uploads/team-pedro.webp"
     }
   ]
