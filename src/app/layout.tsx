@@ -14,6 +14,18 @@ const plusJakarta = Plus_Jakarta_Sans({
   display: 'swap',
 })
 
+function getMetadataBase(): URL {
+  const envUrl =
+    process.env.NEXTAUTH_URL?.trim() ||
+    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000')
+  try {
+    const formatted = envUrl.startsWith('http') ? envUrl : `https://${envUrl}`
+    return new URL(formatted)
+  } catch {
+    return new URL('http://localhost:3000')
+  }
+}
+
 export const metadata: Metadata = {
   title: {
     default: 'A. Coffee — Café Artesanal Brasileiro',
@@ -24,7 +36,7 @@ export const metadata: Metadata = {
   keywords: ['café especial', 'café artesanal', 'café brasileiro', 'torra artesanal', 'Sul de Minas', 'Cerrado Mineiro'],
   authors: [{ name: 'A. Coffee' }],
   creator: 'A. Coffee',
-  metadataBase: new URL(process.env.NEXTAUTH_URL ?? 'http://localhost:3000'),
+  metadataBase: getMetadataBase(),
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
