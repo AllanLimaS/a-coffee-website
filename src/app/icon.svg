@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5E7D0" />
+      <stop offset="45%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#9E7A44" />
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#26211D" />
+      <stop offset="100%" stop-color="#0E0C0B" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.8" />
+    </filter>
+  </defs>
+
+  <!-- Luxury Background Surface -->
+  <rect width="512" height="512" rx="124" fill="url(#bgGrad)" />
+  <rect x="14" y="14" width="484" height="484" rx="110" fill="none" stroke="url(#goldGrad)" stroke-width="6" opacity="0.35" />
+
+  <!-- Monogram "A." Centerpiece -->
+  <g filter="url(#shadow)">
+    <text 
+      x="236" 
+      y="370" 
+      text-anchor="middle" 
+      font-family="'Playfair Display', 'Georgia', 'Times New Roman', serif" 
+      font-weight="800" 
+      font-size="360" 
+      fill="url(#goldGrad)"
+      letter-spacing="-12"
+    >A<tspan fill="url(#goldGrad)" font-size="320">.</tspan></text>
+  </g>
+</svg>
