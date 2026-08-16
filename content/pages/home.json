@@ -1,8 +1,9 @@
 {
   "hero": {
-    "title": "A. Coffee TESTE MUITO LOUCO",
-    "subtitle": "Do grão à xícara,cada detalhe importa muito mesmo.",
-    "backgroundImage": "/uploads/cafe-1786409081602.webp",
+    "title": "A. Coffee ",
+    "subtitle": "Do grão à xícara, cada detalhe importa.",
+    "backgroundImage": "/uploads/coffee_hero_poster.webp",
+    "backgroundVideo": "/uploads/coffee_hero_web.mp4",
     "ctaText": "Conheça nossos cafés",
     "ctaLink": "/servicos"
   },
@@ -55,7 +56,7 @@
   "cta": {
     "title": "Pronto para descobrir o seu café ideal?",
     "subtitle": "Explore nossa seleção de cafés especiais e encontre o sabor que combina com você.",
-    "buttonText": "Ver Todos os Cafés",
+    "buttonText": "Veja todos os serviços",
     "buttonLink": "/servicos"
   }
 }
