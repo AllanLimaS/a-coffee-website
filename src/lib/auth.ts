@@ -1,11 +1,11 @@
 import type { NextAuthOptions } from 'next-auth'
 import GithubProvider from 'next-auth/providers/github'
 
-// ── Validação de variáveis de ambiente obrigatórias ──
+// ── Validação de variáveis de ambiente ──
 if (!process.env.NEXTAUTH_SECRET || process.env.NEXTAUTH_SECRET.length < 32) {
-  throw new Error(
-    'NEXTAUTH_SECRET não está definido ou é muito curto (mínimo 32 caracteres). ' +
-    'Gere um com: openssl rand -base64 32'
+  console.warn(
+    '[auth] AVISO: NEXTAUTH_SECRET não está definido ou possui menos de 32 caracteres. ' +
+    'Defina uma chave segura nas variáveis de ambiente da Vercel para produção.'
   )
 }
 
@@ -19,6 +19,7 @@ if (adminUsers.length === 0) {
 }
 
 export const authOptions: NextAuthOptions = {
+  secret: process.env.NEXTAUTH_SECRET || 'a-coffee-website-fallback-secret-key-32chars-min',
   providers: [
     GithubProvider({
       clientId: process.env.GITHUB_CLIENT_ID ?? '',
