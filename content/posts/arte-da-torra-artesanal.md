@@ -2,7 +2,7 @@
 title: "A arte da torra artesanal: como transformamos grãos verdes em sabor"
 slug: "arte-da-torra-artesanal"
 date: "2026-08-01"
-author: "Pedro Alves"
+author: "Ciclano Alves"
 category: "Processo"
 tags: ["torra", "artesanal", "café especial"]
 coverImage: "/uploads/post-torra.webp"
