@@ -2,7 +2,7 @@
 title: "Sul de Minas vs. Cerrado Mineiro: entenda as diferenças no copo"
 slug: "sul-de-minas-vs-cerrado-mineiro"
 date: "2026-07-15"
-author: "André Mendes"
+author: "Allan das Limas"
 category: "Origens"
 tags: ["origens", "terroir", "Sul de Minas", "Cerrado Mineiro"]
 coverImage: "/uploads/post-origens.webp"
