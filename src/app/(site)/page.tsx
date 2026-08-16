@@ -41,114 +41,118 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* ── Hero (Split Layout) ── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-14">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
-          {/* Coluna Esquerda: Bloco de Conteúdo Sólido */}
+      {/* ── Hero (Full-Screen Split Layout) ── */}
+      <section className="w-full min-h-[calc(100vh-45px)] grid grid-cols-1 lg:grid-cols-12 items-stretch overflow-hidden">
+        {/* Coluna Esquerda: Bloco de Conteúdo Sólido (Full Height) */}
+        <div
+          className="lg:col-span-7 px-6 sm:px-12 md:px-16 lg:px-20 py-16 sm:py-20 lg:py-24 flex flex-col justify-between relative overflow-hidden"
+          style={{ backgroundColor: 'var(--color-forest)' }}
+        >
+          {/* Ambient light glow */}
           <div
-            className="lg:col-span-7 rounded-3xl p-8 sm:p-12 md:p-16 flex flex-col justify-between relative overflow-hidden border border-white/10 shadow-2xl"
-            style={{ backgroundColor: 'var(--color-forest)' }}
-          >
-            {/* Ambient light glow */}
-            <div
-              className="absolute -top-24 -right-24 w-96 h-96 rounded-full opacity-20 pointer-events-none blur-3xl"
-              style={{ backgroundColor: 'var(--color-gold)' }}
-            />
+            className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full opacity-20 pointer-events-none blur-3xl"
+            style={{ backgroundColor: 'var(--color-gold)' }}
+          />
+          {/* Subtle noise texture */}
+          <div
+            className="absolute inset-0 opacity-[0.03] pointer-events-none"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+              backgroundSize: '200px',
+            }}
+          />
 
-            <div>
-              {/* Tag com linha decorativa */}
-              <div className="flex items-center gap-3 mb-6">
-                <span className="w-8 h-[2px] bg-[var(--color-gold)]" />
-                <span className="text-xs font-bold tracking-widest uppercase text-[var(--color-gold)]">
-                  Specialty Roastery • Edição 2026
-                </span>
-              </div>
-
-              {/* Título de alto impacto com Playfair Display */}
-              <h1
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight mb-6 text-[var(--color-canvas)] font-[family-name:var(--font-display)]"
-              >
-                {home.hero.title}
-              </h1>
-
-              {/* Subtítulo */}
-              <p
-                className="text-base sm:text-lg lg:text-xl font-light leading-relaxed max-w-xl mb-10 text-[rgba(244,239,230,0.8)] font-[family-name:var(--font-sans)]"
-              >
-                {home.hero.subtitle}
-              </p>
+          <div className="relative z-10">
+            {/* Tag com linha decorativa */}
+            <div className="flex items-center gap-3 mb-8">
+              <span className="w-10 h-[2px] bg-[var(--color-gold)]" />
+              <span className="text-xs sm:text-sm font-bold tracking-widest uppercase text-[var(--color-gold)]">
+                Specialty Roastery • Edição 2026
+              </span>
             </div>
 
-            <div>
-              {/* CTAs */}
-              <div className="flex flex-wrap gap-4 items-center">
-                <Link
-                  href={home.hero.ctaLink}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-sm tracking-wide transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:scale-95"
-                  style={{ backgroundColor: 'var(--color-gold)', color: '#FFFFFF' }}
-                >
-                  {home.hero.ctaText}
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </Link>
-                <Link
-                  href="/sobre"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-semibold text-sm tracking-wide transition-all border border-[rgba(244,239,230,0.3)] text-[var(--color-canvas)] hover:bg-white/10 hover:border-[var(--color-canvas)]"
-                >
-                  Nossa História
-                </Link>
-              </div>
+            {/* Título de alto impacto com Playfair Display */}
+            <h1
+              className="text-4xl sm:text-6xl md:text-7xl xl:text-8xl font-bold leading-[1.05] tracking-tight mb-8 text-[var(--color-canvas)] font-[family-name:var(--font-display)] max-w-3xl"
+            >
+              {home.hero.title}
+            </h1>
 
-              {/* Micro badge no rodapé do bloco */}
-              <div className="mt-10 pt-6 border-t border-white/10 flex flex-wrap items-center gap-6 text-xs text-[rgba(244,239,230,0.5)]">
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>Torrefação Própria</span>
-                </div>
-                <span>•</span>
-                <span>Altitude 1.100m+</span>
-                <span>•</span>
-                <span>SCA 86+ Pontos</span>
-              </div>
+            {/* Subtítulo */}
+            <p
+              className="text-lg sm:text-xl lg:text-2xl font-light leading-relaxed max-w-2xl mb-12 text-[rgba(244,239,230,0.85)] font-[family-name:var(--font-sans)]"
+            >
+              {home.hero.subtitle}
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-5 items-center">
+              <Link
+                href={home.hero.ctaLink}
+                className="inline-flex items-center justify-center gap-3 px-9 py-4 sm:py-5 rounded-xl font-bold text-base tracking-wide transition-all shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:scale-95"
+                style={{ backgroundColor: 'var(--color-gold)', color: '#FFFFFF' }}
+              >
+                {home.hero.ctaText}
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </Link>
+              <Link
+                href="/sobre"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 sm:py-5 rounded-xl font-semibold text-base tracking-wide transition-all border border-[rgba(244,239,230,0.35)] text-[var(--color-canvas)] hover:bg-white/10 hover:border-[var(--color-canvas)]"
+              >
+                Nossa História
+              </Link>
             </div>
           </div>
 
-          {/* Coluna Direita: Bloco Fotográfico com Card Flutuante */}
-          <div className="lg:col-span-5 relative rounded-3xl overflow-hidden min-h-[440px] sm:min-h-[520px] lg:min-h-[580px] shadow-2xl border border-[var(--color-border)] group">
-            {/* Foto principal (CMS ou fallback do showroom) */}
-            <Image
-              src={home.hero.backgroundImage || '/images/hero.jpg'}
-              alt={home.hero.title}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              priority
-              sizes="(max-width: 1024px) 100vw, 42vw"
-            />
-
-            {/* Gradiente escuro no rodapé da imagem para leitura */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-
-            {/* Badge flutuante Glassmorphism */}
-            <div
-              className="absolute bottom-6 left-6 right-6 p-5 sm:p-6 rounded-2xl border border-white/15 backdrop-blur-md shadow-2xl"
-              style={{ backgroundColor: 'rgba(25, 22, 20, 0.85)' }}
-            >
-              <div className="flex items-center justify-between gap-2 mb-1.5">
-                <h3
-                  className="text-lg font-bold font-[family-name:var(--font-display)] text-[var(--color-gold)]"
-                >
-                  Showroom & Torrefação
-                </h3>
-                <span className="inline-flex items-center gap-1.5 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                  Ao Vivo
-                </span>
-              </div>
-              <p className="text-xs sm:text-sm text-[rgba(244,239,230,0.7)] leading-relaxed">
-                Visite nossa flagship em São Paulo e acompanhe a curva de torra artesanal de perto.
-              </p>
+          {/* Micro badge no rodapé do bloco */}
+          <div className="relative z-10 mt-14 pt-8 border-t border-white/15 flex flex-wrap items-center gap-6 sm:gap-8 text-xs sm:text-sm text-[rgba(244,239,230,0.6)]">
+            <div className="flex items-center gap-2.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="font-medium">Torrefação Artesanal Própria</span>
             </div>
+            <span>•</span>
+            <span className="font-medium">Altitude 1.100m+</span>
+            <span>•</span>
+            <span className="font-medium">SCA 86+ Pontos</span>
+          </div>
+        </div>
+
+        {/* Coluna Direita: Bloco Fotográfico Editorial (Full Height) */}
+        <div className="lg:col-span-5 relative min-h-[480px] sm:min-h-[560px] lg:min-h-full overflow-hidden group">
+          {/* Foto principal de ponta a ponta */}
+          <Image
+            src={home.hero.backgroundImage || '/images/hero.jpg'}
+            alt={home.hero.title}
+            fill
+            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+            priority
+            sizes="(max-width: 1024px) 100vw, 45vw"
+          />
+
+          {/* Gradiente escuro no rodapé da imagem para leitura */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
+
+          {/* Badge flutuante Glassmorphism */}
+          <div
+            className="absolute bottom-8 left-6 right-6 sm:left-10 sm:right-10 p-6 sm:p-7 rounded-2xl border border-white/20 backdrop-blur-md shadow-2xl"
+            style={{ backgroundColor: 'rgba(25, 22, 20, 0.85)' }}
+          >
+            <div className="flex items-center justify-between gap-3 mb-2">
+              <h3
+                className="text-xl font-bold font-[family-name:var(--font-display)] text-[var(--color-gold)]"
+              >
+                Showroom & Torrefação
+              </h3>
+              <span className="inline-flex items-center gap-1.5 text-[11px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                Ao Vivo
+              </span>
+            </div>
+            <p className="text-xs sm:text-sm text-[rgba(244,239,230,0.75)] leading-relaxed">
+              Visite nossa flagship e acompanhe a curva de torra artesanal dos microlotes de perto.
+            </p>
           </div>
         </div>
       </section>
