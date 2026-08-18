@@ -65,12 +65,13 @@ O site público foi construído com foco em estética editorial, tempos de carre
   </table>
 </div>
 
-### 🎥 Tour em Vídeo
-Assista a uma navegação rápida de 40 segundos pelas páginas e funcionalidades:
+### 🎥 Tour em Vídeo (Demonstração Completa)
+Assista a um tour rápido de 40 segundos pelas páginas, modais interativos e painel administrativo CMS:
 
-https://github.com/user-attachments/assets/docs/a_coffee_demo.mp4
+https://github.com/AllanLimaS/a-coffee-website/raw/master/docs/a_coffee_demo_mini.mp4
 
-> 💡 *Caso seu navegador não reproduza o player acima, você pode [abrir o arquivo docs/a_coffee_demo.webm](docs/a_coffee_demo.webm).*
+> 🎬 **[▶️ Clique aqui para abrir e assistir o vídeo da demonstração (1.2 MB)](docs/a_coffee_demo_mini.mp4)**  
+> *(Disponível também na versão de alta definição em [docs/a_coffee_demo.webm](docs/a_coffee_demo.webm))*
 
 ---
 
