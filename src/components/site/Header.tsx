@@ -42,8 +42,11 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <span
-              className="text-2xl font-bold tracking-tight transition-opacity group-hover:opacity-80"
-              style={{ fontFamily: 'var(--font-display)', color: 'var(--color-espresso)' }}
+              className="text-2xl font-bold tracking-tight transition-colors duration-300 group-hover:opacity-80"
+              style={{
+                fontFamily: 'var(--font-display)',
+                color: scrolled ? 'var(--color-espresso)' : '#FFFFFF',
+              }}
             >
               A. Coffee
             </span>
@@ -57,8 +60,14 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm font-medium transition-colors relative group"
-                  style={{ color: isActive ? 'var(--color-gold)' : 'var(--color-espresso)' }}
+                  className="text-sm font-medium transition-colors duration-300 relative group"
+                  style={{
+                    color: isActive
+                      ? 'var(--color-gold)'
+                      : scrolled
+                      ? 'var(--color-espresso)'
+                      : 'rgba(255, 255, 255, 0.9)',
+                  }}
                 >
                   {item.label}
                   <span
@@ -77,8 +86,11 @@ export default function Header() {
           <div className="hidden md:flex items-center">
             <Link
               href="/contato"
-              className="px-5 py-2.5 rounded-md text-sm font-semibold transition-all hover:opacity-90 active:scale-95"
-              style={{ backgroundColor: 'var(--color-forest)', color: 'var(--color-canvas)' }}
+              className="px-5 py-2.5 rounded-md text-sm font-semibold transition-all duration-300 hover:opacity-90 active:scale-95 shadow-sm"
+              style={{
+                backgroundColor: scrolled ? 'var(--color-forest)' : 'var(--color-gold)',
+                color: scrolled ? 'var(--color-canvas)' : '#191614',
+              }}
             >
               Fale Conosco
             </Link>
@@ -86,7 +98,7 @@ export default function Header() {
 
           {/* Hambúrguer mobile */}
           <button
-            className="md:hidden flex flex-col gap-1.5 p-2 rounded"
+            className="md:hidden flex flex-col gap-1.5 p-2 rounded cursor-pointer"
             onClick={() => setMenuOpen(v => !v)}
             aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
             aria-expanded={menuOpen}
@@ -94,21 +106,21 @@ export default function Header() {
             <span
               className="block w-6 h-0.5 transition-all duration-200"
               style={{
-                backgroundColor: 'var(--color-espresso)',
+                backgroundColor: scrolled ? 'var(--color-espresso)' : '#FFFFFF',
                 transform: menuOpen ? 'translateY(8px) rotate(45deg)' : '',
               }}
             />
             <span
               className="block w-6 h-0.5 transition-all duration-200"
               style={{
-                backgroundColor: 'var(--color-espresso)',
+                backgroundColor: scrolled ? 'var(--color-espresso)' : '#FFFFFF',
                 opacity: menuOpen ? 0 : 1,
               }}
             />
             <span
               className="block w-6 h-0.5 transition-all duration-200"
               style={{
-                backgroundColor: 'var(--color-espresso)',
+                backgroundColor: scrolled ? 'var(--color-espresso)' : '#FFFFFF',
                 transform: menuOpen ? 'translateY(-8px) rotate(-45deg)' : '',
               }}
             />
@@ -119,8 +131,11 @@ export default function Header() {
       {/* Menu mobile */}
       {menuOpen && (
         <div
-          className="md:hidden border-t"
-          style={{ backgroundColor: 'var(--color-canvas)', borderColor: 'var(--color-border)' }}
+          className="md:hidden border-t backdrop-blur-md transition-all duration-300"
+          style={{
+            backgroundColor: scrolled ? 'var(--color-canvas)' : 'rgba(25, 22, 20, 0.98)',
+            borderColor: scrolled ? 'var(--color-border)' : 'rgba(255, 255, 255, 0.1)',
+          }}
         >
           <nav className="flex flex-col px-6 py-4 gap-1">
             {NAV_ITEMS.map(item => {
@@ -129,10 +144,14 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="py-3 text-base font-medium border-b"
+                  className="py-3 text-base font-medium border-b transition-colors"
                   style={{
-                    color: isActive ? 'var(--color-gold)' : 'var(--color-espresso)',
-                    borderColor: 'var(--color-border)',
+                    color: isActive
+                      ? 'var(--color-gold)'
+                      : scrolled
+                      ? 'var(--color-espresso)'
+                      : 'rgba(255, 255, 255, 0.9)',
+                    borderColor: scrolled ? 'var(--color-border)' : 'rgba(255, 255, 255, 0.1)',
                   }}
                 >
                   {item.label}
@@ -141,8 +160,11 @@ export default function Header() {
             })}
             <Link
               href="/contato"
-              className="mt-4 py-3 text-center rounded-md font-semibold"
-              style={{ backgroundColor: 'var(--color-forest)', color: 'var(--color-canvas)' }}
+              className="mt-4 py-3 text-center rounded-md font-semibold transition-all"
+              style={{
+                backgroundColor: scrolled ? 'var(--color-forest)' : 'var(--color-gold)',
+                color: scrolled ? 'var(--color-canvas)' : '#191614',
+              }}
             >
               Fale Conosco
             </Link>
