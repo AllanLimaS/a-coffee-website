@@ -7,7 +7,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 [![NextAuth.js](https://img.shields.io/badge/NextAuth.js-OAuth-purple?style=for-the-badge&logo=auth0)](https://next-auth.js.org/)
-[![Vercel](https://img.shields.io/badge/Vercel-Live_Demo-black?style=for-the-badge&logo=vercel)](https://a-coffee-website-rosy.vercel.app)
+[![Vercel](https://img.shields.io/badge/Vercel-Live_Demo-black?style=for-the-badge&logo=vercel)](https://a-coffee.allanlimas.com.br)
 
 [🌐 **Acessar Site ao Vivo**](https://a-coffee.allanlimas.com.br) • [💼 **Meu Portfólio**](https://allanlimas.com.br)
 
