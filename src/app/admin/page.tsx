@@ -100,7 +100,7 @@ export default function AdminDashboard() {
           Dashboard
         </h1>
         <p className="text-sm" style={{ color: 'rgba(244,239,230,0.4)' }}>
-          Visão geral do conteúdo do site A. Coffee
+          Visão geral do conteúdo do site Café Ponto
         </p>
       </div>
 

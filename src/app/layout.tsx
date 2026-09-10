@@ -28,26 +28,26 @@ function getMetadataBase(): URL {
 
 export const metadata: Metadata = {
   title: {
-    default: 'A. Coffee — Café Artesanal Brasileiro',
-    template: '%s | A. Coffee',
+    default: 'Café Ponto — Café Artesanal Brasileiro',
+    template: '%s | Café Ponto',
   },
   description:
     'Cafés especiais selecionados diretamente de pequenos produtores brasileiros. Torra artesanal semanal com entrega em todo o Brasil.',
   keywords: ['café especial', 'café artesanal', 'café brasileiro', 'torra artesanal', 'Sul de Minas', 'Cerrado Mineiro'],
-  authors: [{ name: 'A. Coffee' }],
-  creator: 'A. Coffee',
+  authors: [{ name: 'Café Ponto' }],
+  creator: 'Café Ponto',
   metadataBase: getMetadataBase(),
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    siteName: 'A. Coffee',
-    title: 'A. Coffee — Café Artesanal Brasileiro',
+    siteName: 'Café Ponto',
+    title: 'Café Ponto — Café Artesanal Brasileiro',
     description: 'Cafés especiais selecionados diretamente de pequenos produtores brasileiros.',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'A. Coffee' }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Café Ponto' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'A. Coffee — Café Artesanal Brasileiro',
+    title: 'Café Ponto — Café Artesanal Brasileiro',
     description: 'Cafés especiais selecionados diretamente de pequenos produtores brasileiros.',
     images: ['/og-image.jpg'],
   },

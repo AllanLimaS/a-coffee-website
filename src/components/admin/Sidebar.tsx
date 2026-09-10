@@ -64,14 +64,16 @@ export default function AdminSidebar() {
         style={{ borderColor: 'rgba(255,255,255,0.08)' }}
       >
         <Link href="/admin">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/logo.svg"
+            alt="Café Ponto"
+            width={76}
+            height={32}
+            className="h-8 w-auto"
+          />
           <span
-            className="text-xl font-bold"
-            style={{ fontFamily: 'var(--font-display)', color: 'var(--color-canvas)' }}
-          >
-            A. Coffee
-          </span>
-          <span
-            className="block text-xs mt-0.5"
+            className="block text-xs mt-1.5"
             style={{ color: 'rgba(244,239,230,0.4)' }}
           >
             Admin CMS

@@ -27,16 +27,16 @@ export default function ProductActionModal({
   // Mensagens pré-configuradas para cada serviço
   const whatsappMessages: Record<string, string> = {
     'assinatura-mensal':
-      'Olá! Gostaria de saber mais sobre o plano de Assinatura Mensal de Cafés Especiais da A. Coffee e os microlotes deste mês.',
+      'Olá! Gostaria de saber mais sobre o plano de Assinatura Mensal de Cafés Especiais da Café Ponto e os microlotes deste mês.',
     corporativo:
       'Olá! Gostaria de solicitar uma proposta personalizada e agendar uma degustação gratuita de Café Corporativo para a minha empresa.',
     'cafe-especial':
-      'Olá! Gostaria de encomendar cafés especiais da A. Coffee diretamente pelo WhatsApp.',
+      'Olá! Gostaria de encomendar cafés especiais da Café Ponto diretamente pelo WhatsApp.',
   }
 
   const currentMessage =
     (serviceSlug && whatsappMessages[serviceSlug]) ||
-    `Olá! Gostaria de mais informações sobre ${serviceTitle || 'os cafés especiais da A. Coffee'}.`
+    `Olá! Gostaria de mais informações sobre ${serviceTitle || 'os cafés especiais da Café Ponto'}.`
 
   return (
     <Modal open={!!type} onClose={onClose} maxWidth="md">

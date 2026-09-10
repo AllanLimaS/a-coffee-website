@@ -1,6 +1,6 @@
 <div align="center">
 
-# ☕ A. Coffee — Website Institucional & CMS Git-Based
+# ☕ Café Ponto — Website Institucional & CMS Git-Based
 
 [![Next.js 15](https://img.shields.io/badge/Next.js-15.5-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React 19](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)](https://react.dev/)
@@ -35,7 +35,7 @@ O site público foi construído com foco em estética editorial, tempos de carre
 ### 🖥️ Demonstração Visual (Desktop & Mobile)
 
 <div align="center">
-  <img src="docs/a-coffee-hero.webp" alt="A. Coffee — Página Inicial" width="100%" />
+  <img src="docs/a-coffee-hero.webp" alt="Café Ponto — Página Inicial" width="100%" />
 </div>
 
 <br/>

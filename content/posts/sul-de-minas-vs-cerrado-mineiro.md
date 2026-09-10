@@ -48,4 +48,4 @@ Mas a melhor resposta? Experimente os dois. É exatamente por isso que na nossa 
 
 ---
 
-*André Mendes é co-fundador e Head de Sourcing do A. Coffee. Visita produtores das duas regiões pelo menos duas vezes por ano.*
+*André Mendes é co-fundador e Head de Sourcing do Café Ponto. Visita produtores das duas regiões pelo menos duas vezes por ano.*

@@ -22,12 +22,14 @@ function LoginContent() {
       >
         {/* Logo */}
         <div className="text-center mb-8">
-          <h1
-            className="text-3xl font-bold mb-1"
-            style={{ fontFamily: 'var(--font-display)', color: 'var(--color-canvas)' }}
-          >
-            A. Coffee
-          </h1>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/logo.svg"
+            alt="Café Ponto"
+            width={95}
+            height={40}
+            className="h-10 w-auto mx-auto mb-2"
+          />
           <p className="text-sm" style={{ color: 'rgba(244,239,230,0.5)' }}>
             Painel Administrativo
           </p>

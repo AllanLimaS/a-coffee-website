@@ -1,12 +1,12 @@
-# ☕ A. Coffee — Design System & Especificações Visuais
+# ☕ Café Ponto — Design System & Especificações Visuais
 
-Documento oficial de especificação de Design, Identidade de Marca, Guia de Estilo e Tokens Visuais do projeto **A. Coffee**.
+Documento oficial de especificação de Design, Identidade de Marca, Guia de Estilo e Tokens Visuais do projeto **Café Ponto**.
 
 ---
 
 ## 1. Identidade da Marca (Branding & Positioning)
 
-- **Nome da Marca**: `A. Coffee` (ou `A. Coffee Roasters`)
+- **Nome da Marca**: `Café Ponto`
 - **Slogan**: *Crafted with Precision. Brewed for Everyday.*
 - **Conceito**: Torrefação institucional de café de especialidade (*specialty coffee*) de alto padrão. Une a força tipográfica e layout estruturado com a elegância do minimalismo nórdico e a transparência do comércio direto com produtores (*direct trade*).
 
@@ -15,7 +15,7 @@ Documento oficial de especificação de Design, Identidade de Marca, Guia de Est
 ## 2. Referências de Design (Benchmarking Visual)
 
 1. **BENS CAFÉ (Layout Structure & Impact)**:
-   - **Marquee Ticker Banner**: Faixa animada contínua no topo (`A. COFFEE ROASTERS • TORRA SEMANAL ARTESANAL`).
+   - **Marquee Ticker Banner**: Faixa animada contínua no topo (`CAFÉ PONTO • TORRA SEMANAL ARTESANAL`).
    - **Hero Section Dividida (Split Layout)**: Bloco container de cor sólida com texto de grande impacto à esquerda + fotografia realista de alta resolução da cafeteria à direita.
    - **Cards de Produtos**: Fotos de destaque com tags flutuantes de origem e preços destacados.
 

@@ -26,7 +26,7 @@ Entre 170°C e 200°C ocorre o chamado **"primeiro crack"**: os grãos expandem 
 
 ## Por que torramos em pequenos lotes
 
-No A. Coffee, cada lote pesa entre 3 e 5 kg. É bem menos do que as torrefadoras industriais que trabalham com centenas de quilos por batelada, mas é essa escala pequena que nos dá controle total sobre o processo.
+No Café Ponto, cada lote pesa entre 3 e 5 kg. É bem menos do que as torrefadoras industriais que trabalham com centenas de quilos por batelada, mas é essa escala pequena que nos dá controle total sobre o processo.
 
 Conseguimos monitorar a temperatura a cada segundo, ajustar o fluxo de ar, e interromper a torra no momento exato para extrair o perfil sensorial que buscamos para aquela origem específica.
 
@@ -38,4 +38,4 @@ A diferença entre um café torrado há 1 semana e um torrado há 3 meses é eno
 
 ---
 
-*Pedro Alves é Head Barista e Q-Grader certificado pela SCA no A. Coffee.*
+*Pedro Alves é Head Barista e Q-Grader certificado pela SCA no Café Ponto.*

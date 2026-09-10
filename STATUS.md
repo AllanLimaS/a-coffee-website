@@ -1,4 +1,4 @@
-# ☕ A. Coffee — Status de Implementação
+# ☕ Café Ponto — Status de Implementação
 
 > Atualizado em: 10/08/2026
 

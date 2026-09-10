@@ -44,11 +44,11 @@ export function getContactContent(): ContactContent {
     return {
       title: 'Contato',
       subtitle: 'Tem alguma dúvida, sugestão ou quer saber mais sobre nossos cafés especiais? Adoramos conversar sobre café.',
-      email: 'contato@acoffee.com.br',
+      email: 'contato@cafeponto.com.br',
       phone: '+55 11 99999-9999',
       address: 'Rua do Café, 123\nSão Paulo, SP',
       hours: 'Seg–Sex, 9h às 18h',
-      instagramUrl: 'https://instagram.com/a.coffee',
+      instagramUrl: 'https://instagram.com/cafeponto',
       whatsappUrl: 'https://wa.me/5511999999999',
     }
   }

@@ -40,16 +40,16 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <span
-              className="text-2xl font-bold tracking-tight transition-colors duration-300 group-hover:opacity-80"
-              style={{
-                fontFamily: 'var(--font-display)',
-                color: scrolled ? 'var(--color-espresso)' : '#FFFFFF',
-              }}
-            >
-              A. Coffee
-            </span>
+          <Link href="/" className="flex items-center gap-2 group" aria-label="Café Ponto">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/logo.svg"
+              alt="Café Ponto"
+              width={76}
+              height={32}
+              className="transition-all duration-300 group-hover:opacity-80"
+              style={{ filter: scrolled ? 'brightness(0)' : 'none' }}
+            />
           </Link>
 
           {/* Nav desktop */}

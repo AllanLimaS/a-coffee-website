@@ -4,7 +4,7 @@ import { getAboutContent } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Sobre Nós',
-  description: 'Conheça a história do A. Coffee — de onde viemos, o que nos move e quem somos.',
+  description: 'Conheça a história do Café Ponto — de onde viemos, o que nos move e quem somos.',
 }
 
 const VALUE_SVGS: Record<string, React.ReactNode> = {
@@ -93,7 +93,7 @@ export default function SobrePage() {
             >
               <Image
                 src="/images/espresso.jpg"
-                alt="História da A. Coffee"
+                alt="História do Café Ponto"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -233,7 +233,7 @@ export default function SobrePage() {
 
                 <div className="mt-6 pt-4 border-t border-[var(--color-border)]/50 flex items-center gap-1.5 text-xs text-[var(--color-forest)] font-medium">
                   <span className="w-1 h-1 rounded-full bg-[var(--color-gold)]" />
-                  <span>Compromisso A. Coffee</span>
+                  <span>Compromisso Café Ponto</span>
                 </div>
               </div>
             ))}

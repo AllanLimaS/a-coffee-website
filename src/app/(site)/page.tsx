@@ -5,7 +5,7 @@ import { getHomeContent, getAllServices } from '@/lib/content'
 import FeaturedProducts from '@/components/site/FeaturedProducts'
 
 export const metadata: Metadata = {
-  title: 'A. Coffee — Café Artesanal Brasileiro',
+  title: 'Café Ponto — Café Artesanal Brasileiro',
   description: 'Cafés especiais selecionados diretamente de pequenos produtores brasileiros. Torra artesanal semanal.',
 }
 
@@ -18,6 +18,7 @@ export default function HomePage() {
     <>
       {/* ── Split Hero Layout (Full Screen Edge-to-Edge 100vh) ── */}
       <section
+        id="hero"
         className="relative w-full min-h-screen lg:min-h-0 lg:h-screen lg:max-h-screen grid grid-cols-1 lg:grid-cols-12 overflow-hidden"
         style={{ backgroundColor: 'var(--color-forest)' }}
       >
@@ -341,7 +342,7 @@ export default function HomePage() {
               {home.aboutPreview.image ? (
                 <Image
                   src={home.aboutPreview.image}
-                  alt="Sobre A. Coffee"
+                  alt="Sobre o Café Ponto"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"

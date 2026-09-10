@@ -30,7 +30,7 @@ export default function PostForm({ initialData, sha }: PostFormProps) {
     title: '',
     slug: '',
     date: new Date().toISOString().split('T')[0],
-    author: 'A. Coffee',
+    author: 'Café Ponto',
     category: '',
     tags: [],
     coverImage: '',

@@ -1,8 +1,8 @@
-# ☕ A. Coffee — Plano de Implementação
+# ☕ Café Ponto — Plano de Implementação
 
 ## 1. Visão Geral
 
-Site institucional da marca de café **A. Coffee** com **CMS customizado integrado** (painel admin para gerenciar conteúdo).
+Site institucional da marca de café **Café Ponto** com **CMS customizado integrado** (painel admin para gerenciar conteúdo).
 Projeto único (monorepo) — um Next.js App que serve tanto o site público quanto o painel administrativo.
 
 ---
@@ -116,7 +116,7 @@ ADMIN_USERS=AllanLimaS         # Usernames separados por vírgula
 ## 4. Páginas do Site Público
 
 ### 4.1 Home (`/`)
-- **Hero Section**: imagem grande de fundo (café sendo servido), título "A. Coffee", tagline, CTA.
+- **Hero Section**: imagem grande de fundo (café sendo servido), título "Café Ponto", tagline, CTA.
 - **Destaques**: 3 cards com diferenciais da marca (origem, torra artesanal, sustentabilidade).
 - **Produtos em destaque**: grid com 3 produtos principais com imagem, nome e preço.
 - **Sobre (resumo)**: breve texto + link para a página completa.
@@ -191,16 +191,16 @@ ADMIN_USERS=AllanLimaS         # Usernames separados por vírgula
 ### 6.1 `content/config/site.json`
 ```json
 {
-  "siteName": "A. Coffee",
+  "siteName": "Café Ponto",
   "tagline": "Café artesanal com alma brasileira.",
   "logo": "/images/logo.png",
   "socialLinks": {
-    "instagram": "https://instagram.com/a.coffee",
+    "instagram": "https://instagram.com/cafeponto",
     "facebook": "",
     "whatsapp": "5511999999999"
   },
   "contactInfo": {
-    "email": "contato@acoffee.com.br",
+    "email": "contato@cafeponto.com.br",
     "phone": "+55 11 99999-9999",
     "address": "Rua do Café, 123 — São Paulo, SP"
   }
@@ -211,7 +211,7 @@ ADMIN_USERS=AllanLimaS         # Usernames separados por vírgula
 ```json
 {
   "hero": {
-    "title": "A. Coffee",
+    "title": "Café Ponto",
     "subtitle": "Do grão à xícara, cada detalhe importa.",
     "backgroundImage": "/uploads/hero-home.webp",
     "ctaText": "Conheça nossos cafés",
@@ -245,7 +245,7 @@ ADMIN_USERS=AllanLimaS         # Usernames separados por vírgula
 title: "A arte da torra artesanal"
 slug: "arte-da-torra-artesanal"
 date: "2026-08-10"
-author: "A. Coffee"
+author: "Café Ponto"
 category: "Processo"
 tags: ["torra", "artesanal", "café"]
 coverImage: "/uploads/post-torra.webp"
@@ -292,7 +292,7 @@ Conteúdo do post em Markdown aqui...
 - **Body / Corpo de Texto**: **`Plus Jakarta Sans`** (Google Fonts — Sans-serif moderna, limpa e legível)
 
 ### 7.3 Estilo Visual & Referências
-- **BENS CAFÉ**: Layout split na Hero (bloco verde floresta `#233126` com texto impactante + foto alta definição), Marquee Ticker banner animado no topo (`A. COFFEE ROASTERS • TORRA SEMANAL ARTESANAL`), cards de produtos em grid.
+- **BENS CAFÉ**: Layout split na Hero (bloco verde floresta `#233126` com texto impactante + foto alta definição), Marquee Ticker banner animado no topo (`CAFÉ PONTO • TORRA SEMANAL ARTESANAL`), cards de produtos em grid.
 - **Coffee Collective**: Minimalismo nórdico, respiro visual, badges de origem (*Sul de Minas*, *Cerrado Mineiro*, *Chapada Diamantina*) e tags de notas sensoriais (*ex: 🍫 Chocolate Amargo, 🌰 Avelã, 🍊 Acidez Cítrica*).
 - **Componentes Chave**: Guia interativo de métodos de extração do barista (V60, Espresso, Prensa Francesa), botões em Amber Gold (`#AA864B`), badges de pontuação SCA (86+).
 
